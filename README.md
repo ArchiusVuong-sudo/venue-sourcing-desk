@@ -17,7 +17,7 @@ Full video: https://github.com/ArchiusVuong-sudo/venue-sourcing-desk/releases/do
 ## Architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
   UI["Next.js UI: Requests, Expert review, Evals, Policy, Trace"] -->|"POST and SSE"| API["API routes on the Node runtime"]
   API --> Runner["Run engine"]
   Runner --> Provider{"Agent provider"}
