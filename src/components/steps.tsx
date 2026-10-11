@@ -170,7 +170,7 @@ export function TraceTimeline({ steps }: { steps: TraceStep[] }) {
               </div>
               <div className="flex w-64 shrink-0 items-center justify-end gap-3 pt-1 text-[11px] text-ink-500 tabular-nums">
                 {step.kind === "model" ? <span>{tokens(step.inputTokens)} in / {tokens(step.outputTokens)} out</span> : null}
-                {ms ? <span className="w-14 text-right">{duration(ms)}</span> : <span className="w-14" />}
+                {ms || step.kind === "tool" ? <span className="w-14 text-right">{duration(ms)}</span> : <span className="w-14" />}
                 <span className="relative h-1.5 w-20 overflow-hidden rounded-full bg-ink-100" title="Position in the run">
                   <span className={cx("absolute inset-y-0 rounded-full", step.kind === "model" ? "bg-violet-400" : step.kind === "tool" ? "bg-sky-400" : "bg-ink-300")} style={{ left: `${((step.at - (step.kind === "model" ? ms : 0)) / end) * 100}%`, width: `${Math.max(3, (ms / end) * 100)}%` }} />
                 </span>

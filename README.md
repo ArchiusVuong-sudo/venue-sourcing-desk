@@ -107,7 +107,7 @@ npm run build
 npm start                 # http://127.0.0.1:4108
 ```
 
-- Live mode is used when a Claude Code login (`claude login`) or `ANTHROPIC_API_KEY` is present. A run takes about 20-40 s.
+- Live mode is used when a Claude Code login (`claude login`) or `ANTHROPIC_API_KEY` is present. In the recorded runs a shortlist took 16-35 s and a clarifying question about 4 s.
 - Replay mode needs no login or key: `DEMO_REPLAY=1 npm start`. A "Replay mode" badge shows in the header. The example requests and every eval case are recorded under both settings of the no-flights rule.
 - Development server: `npm run dev`.
 - Record fresh fixtures from live runs (14 runs, 3 at a time): `npm run record`. `RECORD_FIXTURES=1 npm start` also saves every live run as a fixture.

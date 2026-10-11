@@ -88,8 +88,9 @@ try {
   // 5. Trace of the failing source run
   await page.getByText(/Source run:/).first().locator("xpath=..").getByRole("link", { name: "trace" }).click();
   await page.getByText("Timeline").waitFor();
-  await page.locator("button", { hasText: "get_quote" }).first().click();
   await shot("08-trace");
+  await page.locator("button", { hasText: "get_quote" }).first().click();
+  await shot("08b-trace-tool-call");
 
   // 6. Policy: turn on the no-flights rule
   await page.getByRole("link", { name: "Policy", exact: true }).click();

@@ -55,7 +55,7 @@ export default function RequestsPage() {
             <p className="text-xs text-ink-500">
               {status.data?.mode === "replay"
                 ? "Replay mode: example requests play back recorded live runs; tool calls run again for real."
-                : "Runs the live agent on the Claude Agent SDK. Takes about 20-40 s."}
+                : "Runs the live agent on the Claude Agent SDK. Takes about 15-35 s."}
             </p>
             <Button onClick={() => create.mutate(brief)} disabled={!canRun}>
               {create.isPending ? <Spinner /> : <IconPlay size={13} />} Run agent
