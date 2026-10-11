@@ -156,7 +156,7 @@ async function runOnce({ brief, ctx, signal }: ProviderInput): Promise<ProviderR
   }
 }
 
-const isTransient = (err: unknown): boolean => {
+export const isTransient = (err: unknown): boolean => {
   if (err instanceof ProviderError) return err.retryable;
   const text = err instanceof Error ? err.message : String(err);
   return /overloaded|rate.?limit|429|5\d\d|ECONNRESET|socket hang up/i.test(text);

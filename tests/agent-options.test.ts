@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { makeToolContext } from "@/lib/agent/context";
-import { childEnv, isolatedOptions } from "@/lib/agent/live";
+import { childEnv, isolatedOptions, isTransient } from "@/lib/agent/live";
+import { ProviderError } from "@/lib/agent/provider";
 import { TOOL_NAMES } from "@/lib/agent/tools";
 import { AgentAnswer, agentAnswerJsonSchema } from "@/lib/domain/types";
 import { policy } from "./helpers";
@@ -61,5 +62,15 @@ describe("shortlist schema", () => {
     const offer = { venueId: "a", quoteId: "Q", quoteStatus: "quoted", startDate: "2027-05-01", totalEur: 1, perGuestEur: 1, tradeOff: "x", policyNotes: [] };
     expect(AgentAnswer.safeParse({ ...base, offers: [offer, offer, offer, offer] }).success).toBe(false);
     expect(AgentAnswer.safeParse({ ...base, understood: { ...base.understood, earliestDate: "May 2027" } }).success).toBe(false);
+  });
+});
+
+describe("LLM retry rule", () => {
+  it("retries overload, rate limits and 5xx, not auth or schema failures", () => {
+    expect(isTransient(new ProviderError("Model API: overloaded", true, "overloaded"))).toBe(true);
+    expect(isTransient(new Error("529 overloaded_error"))).toBe(true);
+    expect(isTransient(new Error("request failed with 503"))).toBe(true);
+    expect(isTransient(new ProviderError("Claude login failed", false, "auth"))).toBe(false);
+    expect(isTransient(new ProviderError("Structured output failed the shortlist schema", false, "schema"))).toBe(false);
   });
 });

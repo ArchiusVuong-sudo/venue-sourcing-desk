@@ -5,8 +5,6 @@ A sourcing desk for corporate events: an agent shortlists venues within company 
 ![Demo](https://github.com/ArchiusVuong-sudo/venue-sourcing-desk/releases/download/v0.1/demo.gif)
 Full video: https://github.com/ArchiusVuong-sudo/venue-sourcing-desk/releases/download/v0.1/demo.mp4
 
-All data is synthetic: every venue, price, CO2 figure and company in this repo is invented. The workspace is a fictional "Demo Co.". I built this prototype for a job application; it has no users.
-
 ## What it does
 
 - A planner types an event request in plain words ("40 people, 2 nights in May, somewhere warm by the sea, EUR 60k, 6 vegetarian, 1 wheelchair user") and watches the agent work step by step: venue search, date checks, quotes and policy checks.
@@ -138,11 +136,12 @@ LIVE=1 npm run test:live   # opt-in: one real agent run
 
 - Unit tests cover quote math and its limits, every policy rule, every eval check (including that no shortlist check passes on an empty answer), the tools (input validation, unknown keys, full-text search with stop-word queries, blackout dates, the retry with backoff, the always-down source), the guard, the replay fixtures and the SDK isolation options.
 - An end-to-end test runs the main flow in replay mode through the same services and route handlers the pages use: request, shortlist, rejection to regression case, approvals to the outbox, a suite run where the new case fails, the policy change, and a suite run where all 7 pass.
-- `scripts/walkthrough.ts` drives the built app in a headless browser through the same flow and saves a 1440x900 screenshot of each screen.
+- `scripts/walkthrough.ts` drives the built app in a headless browser through the same flow and saves a 1440x900 screenshot of each screen. It uses the installed Google Chrome (Playwright channel "chrome").
 
 ## Notes
 
-- Synthetic data only: 31 invented venues in Berlin, Brandenburg, the Baltic coast, Leipzig, Hamburg, Munich, the Lisbon coast and Mallorca. Prices come from invented rate cards; CO2 factors are illustrative round numbers.
+- All data is synthetic: every venue, price, CO2 figure and company in this repo is invented, and the workspace is a fictional "Demo Co.". I built this prototype for a job application; it has no users.
+- The catalog has 31 invented venues in Berlin, Brandenburg, the Baltic coast, Leipzig, Hamburg, Munich, the Lisbon coast and Mallorca. Prices come from invented rate cards; CO2 factors are illustrative round numbers.
 - Limits: one process, in-memory job registry, no auth or roles, one policy, one currency. Replay covers the recorded requests only.
 - A production version would put each agent run and each eval case in a durable background job (Trigger.dev tasks, with a waitpoint for the expert's approval), use hosted Postgres with the same Drizzle schema, and move the API to typed tRPC procedures.
 - It would also add per-tenant policies and approval thresholds, real vendor integrations behind the approval step, Redis for run events across instances, and an eval set grown from production rejections with a CI gate on the pass rate.
