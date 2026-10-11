@@ -1,0 +1,49 @@
+{
+  "name": "venue-sourcing-desk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Venue sourcing desk for corporate events: an agent shortlists venues within policy, an expert approves, rejections become regression tests.",
+  "author": "Khanh Vuong Tuan",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1 -p ${PORT:-4108}",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p ${PORT:-4108}",
+    "test": "vitest run",
+    "test:live": "LIVE=1 vitest run tests/live.smoke.test.ts",
+    "lint": "oxlint src tests scripts",
+    "typecheck": "tsc --noEmit",
+    "smoke": "tsx scripts/smoke.ts",
+    "record": "tsx scripts/record-fixtures.ts",
+    "db:generate": "drizzle-kit generate"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.3.296",
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@electric-sql/pglite": "^0.5.8",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@tanstack/react-query": "^5.104.1",
+    "drizzle-orm": "^0.45.4",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "drizzle-kit": "^0.31.11",
+    "oxlint": "^1.87.0",
+    "postcss": "^8.5.29",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
