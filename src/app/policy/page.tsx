@@ -2,7 +2,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { api } from "@/lib/client/api";
+import { api, useStatus } from "@/lib/client/api";
 import { VENUES } from "@/lib/domain/catalog";
 import type { Policy } from "@/lib/domain/types";
 import { Badge, Button, ErrorState, LoadingBlock, PageHeader, Spinner, cx } from "@/components/ui";
@@ -12,6 +12,7 @@ const nameOf = (id: string) => VENUES.find((v) => v.id === id)?.name ?? id;
 export default function PolicyPage() {
   const qc = useQueryClient();
   const policy = useQuery({ queryKey: ["policy"], queryFn: () => api<Policy>("/api/policy") });
+  const status = useStatus();
   const [edits, setDraft] = useState<Policy | null>(null);
   const [saved, setSaved] = useState(false);
   const draft = edits ?? policy.data ?? null;
@@ -48,6 +49,11 @@ export default function PolicyPage() {
         }
       />
       {save.error ? <div className="mb-4"><ErrorState message={save.error.message} /></div> : null}
+      {status.data?.mode === "replay" ? (
+        <p className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2.5 text-[13px] text-amber-900">
+          Replay mode has recordings for the default policy with the no-flights rule off and on. Other changes need a live run, so replayed requests will say there is no recording.
+        </p>
+      ) : null}
 
       <div className="grid grid-cols-[minmax(0,1fr)_340px] gap-6">
       <div className="card divide-y divide-ink-100">

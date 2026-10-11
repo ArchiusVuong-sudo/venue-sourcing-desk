@@ -39,7 +39,9 @@ export function OfferCard({ g, guests, decision, children }: { g: GuardedOffer; 
           {offer.quoteStatus === "quoted" && quote ? (
             <>
               <div className="whitespace-nowrap text-[22px] font-semibold leading-tight tracking-tight text-ink-950 tabular-nums">{eur(quote.totalEur)}</div>
-              <div className="text-[12.5px] text-ink-500 tabular-nums">{eur(quote.perGuestEur)} per guest · quote {quote.quoteId}</div>
+              <div className="text-[12.5px] text-ink-500 tabular-nums">
+                {eur(quote.perGuestEur)} per guest <span className="whitespace-nowrap font-mono text-[11px] text-ink-400" title="Quote id returned by get_quote in this run">{quote.quoteId}</span>
+              </div>
             </>
           ) : (
             <span className="text-[15px] font-medium text-amber-700">Quote unavailable</span>
