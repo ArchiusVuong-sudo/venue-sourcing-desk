@@ -1,0 +1,299 @@
+{
+  "key": "08189c3495fb261e",
+  "brief": "Team retreat in Berlin for 14 people, 2 nights from 2027-03-10. Somewhere quiet and inspiring where we can also sleep. Budget EUR 9,000.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:00.589Z",
+  "turns": [
+    {
+      "ms": 3090,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "quiet inspiring retreat nature sleep",
+            "minCapacity": 14,
+            "minBedrooms": 14
+          }
+        }
+      ],
+      "inputTokens": 4700,
+      "outputTokens": 6
+    },
+    {
+      "ms": 1297,
+      "text": "Top candidates: Kastanie, Hofgarten, Lindenufer (Berlin), Seeblick.",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "brl-kastanie",
+            "earliestDate": "2027-03-10",
+            "latestDate": "2027-03-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "brl-hofgarten",
+            "earliestDate": "2027-03-10",
+            "latestDate": "2027-03-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "brl-lindenufer",
+            "earliestDate": "2027-03-10",
+            "latestDate": "2027-03-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bb-seeblick",
+            "earliestDate": "2027-03-10",
+            "latestDate": "2027-03-31",
+            "nights": 2
+          }
+        }
+      ],
+      "inputTokens": 6796,
+      "outputTokens": 63
+    },
+    {
+      "ms": 1634,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "brl-kastanie",
+            "guests": 14,
+            "nights": 2,
+            "startDate": "2027-03-10",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "brl-hofgarten",
+            "guests": 14,
+            "nights": 2,
+            "startDate": "2027-03-10",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "brl-lindenufer",
+            "guests": 14,
+            "nights": 2,
+            "startDate": "2027-03-10",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bb-seeblick",
+            "guests": 14,
+            "nights": 2,
+            "startDate": "2027-03-10",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 7803,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1592,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "brl-kastanie",
+            "quoteId": "Q-D0D16A95",
+            "nights": 2,
+            "wheelchairUsers": 0,
+            "budgetEur": 9000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "brl-hofgarten",
+            "quoteId": "Q-7696D684",
+            "nights": 2,
+            "wheelchairUsers": 0,
+            "budgetEur": 9000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "brl-lindenufer",
+            "quoteId": "Q-4382BFC3",
+            "nights": 2,
+            "wheelchairUsers": 0,
+            "budgetEur": 9000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bb-seeblick",
+            "quoteId": "Q-CE53F610",
+            "nights": 2,
+            "wheelchairUsers": 0,
+            "budgetEur": 9000
+          }
+        }
+      ],
+      "inputTokens": 9709,
+      "outputTokens": 24
+    },
+    {
+      "ms": 7099,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 14,
+              "nights": 2,
+              "earliestDate": "2027-03-10",
+              "latestDate": null,
+              "budgetEur": 9000,
+              "wheelchairUsers": 0,
+              "breakoutRooms": 0,
+              "dietary": []
+            },
+            "summary": "Three quiet, policy-compliant venues can host 14 people for 2 nights from 2027-03-10, all within the EUR 9,000 budget. Villa Kastanie is a preferred vendor and the best fit for \"quiet and inspiring\". Prices are for single rooms and no breakout rooms, as none were requested.",
+            "offers": [
+              {
+                "venueId": "brl-kastanie",
+                "quoteId": "Q-D0D16A95",
+                "quoteStatus": "quoted",
+                "startDate": "2027-03-10",
+                "totalEur": 7686,
+                "perGuestEur": 549,
+                "tradeOff": "Quiet villa with library and garden, preferred vendor, 30 minutes from Berlin; it costs more than Hofgarten and is in the city, not a remote setting.",
+                "policyNotes": [
+                  "Preferred vendor",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "brl-hofgarten",
+                "quoteId": "Q-7696D684",
+                "quoteStatus": "quoted",
+                "startDate": "2027-03-10",
+                "totalEur": 7154,
+                "perGuestEur": 511,
+                "tradeOff": "Cheapest option with a creative courtyard and quiet garden; it is in central Kreuzberg, so less secluded.",
+                "policyNotes": [
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "bb-seeblick",
+                "quoteId": "Q-CE53F610",
+                "quoteStatus": "quoted",
+                "startDate": "2027-03-10",
+                "totalEur": 7784,
+                "perGuestEur": 556,
+                "tradeOff": "Lakeside and the most secluded option; it needs a 75-minute car trip, and the lake setting will be cool in March.",
+                "policyNotes": [
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Team retreat request: 14 guests, 2 nights from 2027-03-10",
+              "body": "Hello,\n\nWe are planning a quiet team retreat and would like a proposal.\n\nArrival: 2027-03-10 (alternatives 2027-03-17 or 2027-03-24), 2 nights.\nGuests: 14, each in a single room (28 room nights).\nMeeting space: one meeting room for the full group, with lunch and coffee on both days. No breakout rooms needed.\nDietary needs: none reported. Please confirm vegetarian, vegan and gluten-free options.\nAccessibility: no wheelchair users.\nBudget: all-in total up to EUR 9,000.\n\nPlease include a price breakdown and reply by 2026-11-06.\n\nThank you,\nDemo Co."
+            }
+          }
+        }
+      ],
+      "inputTokens": 10822,
+      "outputTokens": 25
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 14,
+      "nights": 2,
+      "earliestDate": "2027-03-10",
+      "latestDate": null,
+      "budgetEur": 9000,
+      "wheelchairUsers": 0,
+      "breakoutRooms": 0,
+      "dietary": []
+    },
+    "summary": "Three quiet, policy-compliant venues can host 14 people for 2 nights from 2027-03-10, all within the EUR 9,000 budget. Villa Kastanie is a preferred vendor and the best fit for \"quiet and inspiring\". Prices are for single rooms and no breakout rooms, as none were requested.",
+    "offers": [
+      {
+        "venueId": "brl-kastanie",
+        "quoteId": "Q-D0D16A95",
+        "quoteStatus": "quoted",
+        "startDate": "2027-03-10",
+        "totalEur": 7686,
+        "perGuestEur": 549,
+        "tradeOff": "Quiet villa with library and garden, preferred vendor, 30 minutes from Berlin; it costs more than Hofgarten and is in the city, not a remote setting.",
+        "policyNotes": [
+          "Preferred vendor",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "brl-hofgarten",
+        "quoteId": "Q-7696D684",
+        "quoteStatus": "quoted",
+        "startDate": "2027-03-10",
+        "totalEur": 7154,
+        "perGuestEur": 511,
+        "tradeOff": "Cheapest option with a creative courtyard and quiet garden; it is in central Kreuzberg, so less secluded.",
+        "policyNotes": [
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "bb-seeblick",
+        "quoteId": "Q-CE53F610",
+        "quoteStatus": "quoted",
+        "startDate": "2027-03-10",
+        "totalEur": 7784,
+        "perGuestEur": 556,
+        "tradeOff": "Lakeside and the most secluded option; it needs a 75-minute car trip, and the lake setting will be cool in March.",
+        "policyNotes": [
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Team retreat request: 14 guests, 2 nights from 2027-03-10",
+      "body": "Hello,\n\nWe are planning a quiet team retreat and would like a proposal.\n\nArrival: 2027-03-10 (alternatives 2027-03-17 or 2027-03-24), 2 nights.\nGuests: 14, each in a single room (28 room nights).\nMeeting space: one meeting room for the full group, with lunch and coffee on both days. No breakout rooms needed.\nDietary needs: none reported. Please confirm vegetarian, vegan and gluten-free options.\nAccessibility: no wheelchair users.\nBudget: all-in total up to EUR 9,000.\n\nPlease include a price breakdown and reply by 2026-11-06.\n\nThank you,\nDemo Co."
+    }
+  },
+  "metrics": {
+    "numTurns": 15,
+    "inputTokens": 41068,
+    "outputTokens": 3242,
+    "costUsd": 0.06292819999999999,
+    "durationMs": 21827
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "key": "829748b0c124a3e5",
+  "brief": "Leadership offsite in Brandenburg for 18 people, 2 nights from 2027-06-02. One participant uses a wheelchair. Dietary: 3 vegan, 2 gluten-free. Budget EUR 12,000.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:21.293Z",
+  "turns": [
+    {
+      "ms": 3032,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "leadership offsite retreat meeting rooms accessible",
+            "minCapacity": 18,
+            "minBedrooms": 18,
+            "stepFreeOnly": true,
+            "regions": [
+              "Brandenburg"
+            ]
+          }
+        }
+      ],
+      "inputTokens": 4717,
+      "outputTokens": 8
+    },
+    {
+      "ms": 1642,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bb-waldhaus",
+            "earliestDate": "2027-06-02",
+            "latestDate": "2027-06-09",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bb-seeblick",
+            "earliestDate": "2027-06-02",
+            "latestDate": "2027-06-09",
+            "nights": 2
+          }
+        }
+      ],
+      "inputTokens": 5529,
+      "outputTokens": 26
+    },
+    {
+      "ms": 1667,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bb-waldhaus",
+            "guests": 18,
+            "nights": 2,
+            "startDate": "2027-06-02",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bb-seeblick",
+            "guests": 18,
+            "nights": 2,
+            "startDate": "2027-06-02",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 6016,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1765,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bb-waldhaus",
+            "quoteId": "Q-8E3CC707",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 12000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bb-seeblick",
+            "quoteId": "Q-A3A9D2A4",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 12000
+          }
+        }
+      ],
+      "inputTokens": 6989,
+      "outputTokens": 24
+    },
+    {
+      "ms": 6049,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 18,
+              "nights": 2,
+              "earliestDate": "2027-06-02",
+              "latestDate": null,
+              "budgetEur": 12000,
+              "wheelchairUsers": 1,
+              "breakoutRooms": 0,
+              "dietary": [
+                {
+                  "label": "vegan",
+                  "count": 3
+                },
+                {
+                  "label": "gluten-free",
+                  "count": 2
+                }
+              ]
+            },
+            "summary": "Two step-free Brandenburg lodges, both 75 minutes from Berlin by car, are available from 2027-06-02 and within the EUR 12,000 budget. Both are policy compliant and cook vegan and gluten-free as standard. No breakout rooms were requested, so both quotes include none.",
+            "offers": [
+              {
+                "venueId": "bb-waldhaus",
+                "quoteId": "Q-8E3CC707",
+                "quoteStatus": "quoted",
+                "startDate": "2027-06-02",
+                "totalEur": 9432,
+                "perGuestEur": 524,
+                "tradeOff": "Cheapest, preferred vendor, with 4 breakout rooms and a lift; it is a larger lodge, so it is less intimate than Seeblick.",
+                "policyNotes": [
+                  "Preferred vendor",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "bb-seeblick",
+                "quoteId": "Q-A3A9D2A4",
+                "quoteStatus": "quoted",
+                "startDate": "2027-06-02",
+                "totalEur": 10008,
+                "perGuestEur": 556,
+                "tradeOff": "Quiet lakeside setting with a glass plenary room, but about EUR 576 more and only 3 breakout rooms.",
+                "policyNotes": [
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Leadership offsite request, 2027-06-02, 18 guests, 2 nights",
+              "body": "Hello,\n\nWe are looking for a leadership offsite venue.\n\nArrival: 2027-06-02 (alternative 2027-06-09), 2 nights.\nGuests: 18, in single rooms (36 room nights).\nMeeting space: one plenary meeting room for 18, plus breakout rooms if available.\nCatering: day delegate package with lunch and coffee, plus dinners.\nDietary: 3 vegan, 2 gluten-free.\nAccessibility: 1 wheelchair user, so we need step-free access and an accessible bedroom.\nBudget: up to EUR 12,000 in total.\n\nPlease send your offer, with a price breakdown, by 2026-10-25.\n\nThank you,\nDemo Co."
+            }
+          }
+        }
+      ],
+      "inputTokens": 7581,
+      "outputTokens": 25
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 18,
+      "nights": 2,
+      "earliestDate": "2027-06-02",
+      "latestDate": null,
+      "budgetEur": 12000,
+      "wheelchairUsers": 1,
+      "breakoutRooms": 0,
+      "dietary": [
+        {
+          "label": "vegan",
+          "count": 3
+        },
+        {
+          "label": "gluten-free",
+          "count": 2
+        }
+      ]
+    },
+    "summary": "Two step-free Brandenburg lodges, both 75 minutes from Berlin by car, are available from 2027-06-02 and within the EUR 12,000 budget. Both are policy compliant and cook vegan and gluten-free as standard. No breakout rooms were requested, so both quotes include none.",
+    "offers": [
+      {
+        "venueId": "bb-waldhaus",
+        "quoteId": "Q-8E3CC707",
+        "quoteStatus": "quoted",
+        "startDate": "2027-06-02",
+        "totalEur": 9432,
+        "perGuestEur": 524,
+        "tradeOff": "Cheapest, preferred vendor, with 4 breakout rooms and a lift; it is a larger lodge, so it is less intimate than Seeblick.",
+        "policyNotes": [
+          "Preferred vendor",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "bb-seeblick",
+        "quoteId": "Q-A3A9D2A4",
+        "quoteStatus": "quoted",
+        "startDate": "2027-06-02",
+        "totalEur": 10008,
+        "perGuestEur": 556,
+        "tradeOff": "Quiet lakeside setting with a glass plenary room, but about EUR 576 more and only 3 breakout rooms.",
+        "policyNotes": [
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Leadership offsite request, 2027-06-02, 18 guests, 2 nights",
+      "body": "Hello,\n\nWe are looking for a leadership offsite venue.\n\nArrival: 2027-06-02 (alternative 2027-06-09), 2 nights.\nGuests: 18, in single rooms (36 room nights).\nMeeting space: one plenary meeting room for 18, plus breakout rooms if available.\nCatering: day delegate package with lunch and coffee, plus dinners.\nDietary: 3 vegan, 2 gluten-free.\nAccessibility: 1 wheelchair user, so we need step-free access and an accessible bedroom.\nBudget: up to EUR 12,000 in total.\n\nPlease send your offer, with a price breakdown, by 2026-10-25.\n\nThank you,\nDemo Co."
+    }
+  },
+  "metrics": {
+    "numTurns": 9,
+    "inputTokens": 32086,
+    "outputTokens": 2244,
+    "costUsd": 0.0393721,
+    "durationMs": 16601
+  }
+}

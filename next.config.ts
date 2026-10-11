@@ -6,6 +6,8 @@ const config: NextConfig = {
   serverExternalPackages: ["@anthropic-ai/claude-agent-sdk", "@electric-sql/pglite"],
   poweredByHeader: false,
   devIndicators: false,
+  // Do not write agent instruction files into the repo on next dev.
+  agentRules: false,
 };
 
 export default config;

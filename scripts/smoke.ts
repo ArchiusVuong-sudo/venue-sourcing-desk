@@ -14,11 +14,15 @@ const { db, client } = await openDb("memory://");
 const policy = await loadPolicy(db);
 if (process.env.NO_FLIGHTS === "1") policy.noFlightsShortEvents = true;
 const ctx = makeToolContext(db, policy, await loadCatalog(db));
-ctx.trace.onStep((step) => {
-  const line = step.kind === "tool" ? `${step.name} ${step.ok ? "ok" : "ERR"} ${step.ms}ms ${JSON.stringify(step.input)}`
-    : step.kind === "model" ? `model turn (tools: ${step.toolCalls.join(", ") || "-"})`
-    : `${step.kind}: ${"message" in step ? step.message : ""}`;
-  console.log(`[${String(step.at).padStart(6)}ms] ${line}`);
+let printed = 0;
+ctx.trace.onChange((steps) => {
+  for (; printed < steps.length; printed++) {
+    const step = steps[printed]!;
+    const line = step.kind === "tool" ? `${step.name} ${JSON.stringify(step.input)}`
+      : step.kind === "model" ? "model turn"
+      : `${step.kind}: ${"message" in step ? step.message : ""}`;
+    console.log(`[${String(step.at).padStart(6)}ms] ${line}`);
+  }
 });
 try {
   const result = await new LiveProvider().run({ brief, ctx });

@@ -1,0 +1,445 @@
+{
+  "key": "1daced34492289e4",
+  "brief": "Sales offsite for 40 people, 2 nights sometime in May 2027, somewhere warm by the sea. Budget EUR 60,000 all in. 6 of the group are vegetarian and 1 uses a wheelchair.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:10:02.359Z",
+  "turns": [
+    {
+      "ms": 2548,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "warm sea coast",
+            "minCapacity": 40,
+            "minBedrooms": 40,
+            "stepFreeOnly": true,
+            "coastalOnly": true
+          }
+        }
+      ],
+      "inputTokens": 4714,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1470,
+      "text": "Warm candidates: lis-baia, lis-farol, pmi-llum, pmi-olivera.",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lis-baia",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lis-farol",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "pmi-llum",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "pmi-olivera",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        }
+      ],
+      "inputTokens": 6753,
+      "outputTokens": 61
+    },
+    {
+      "ms": 1305,
+      "text": "Breakout rooms weren't requested; use 0... I'll use 1 for sessions? Not specified, so 0.",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lis-baia",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lis-farol",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-10",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "pmi-llum",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "pmi-olivera",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 7766,
+      "outputTokens": 67
+    },
+    {
+      "ms": 1571,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lis-baia",
+            "quoteId": "Q-7B76749D",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lis-farol",
+            "quoteId": "Q-F185626B",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "pmi-llum",
+            "quoteId": "Q-BF24C50F",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "pmi-olivera",
+            "quoteId": "Q-1826FFE8",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        }
+      ],
+      "inputTokens": 9741,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1723,
+      "text": "All four warm venues are blocked because they require flights. I'll move to the Baltic coast venues, which are reachable by train.",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bal-hafenspeicher",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bal-seebruecke",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bal-duenenhof",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "bal-kreideklippe",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        }
+      ],
+      "inputTokens": 11252,
+      "outputTokens": 5
+    },
+    {
+      "ms": 1706,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bal-hafenspeicher",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-15",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bal-seebruecke",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bal-duenenhof",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "bal-kreideklippe",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 12359,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1755,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bal-hafenspeicher",
+            "quoteId": "Q-4E3916EC",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bal-seebruecke",
+            "quoteId": "Q-283E1F27",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "bal-duenenhof",
+            "quoteId": "Q-45C41E86",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        }
+      ],
+      "inputTokens": 14279,
+      "outputTokens": 24
+    },
+    {
+      "ms": 7388,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 40,
+              "nights": 2,
+              "earliestDate": "2027-05-01",
+              "latestDate": "2027-05-31",
+              "budgetEur": 60000,
+              "wheelchairUsers": 1,
+              "breakoutRooms": 0,
+              "dietary": [
+                {
+                  "label": "vegetarian",
+                  "count": 6
+                }
+              ]
+            },
+            "summary": "The warm-sea venues in Lisbon and Mallorca are all blocked by policy, which allows no flights for events of 3 days or fewer. The three offers are step-free Baltic coast hotels reachable by train, all well under the EUR 60,000 budget. May is cool there, with highs around 15°C. Each needs budget-owner sign-off because it is over EUR 20,000.",
+            "offers": [
+              {
+                "venueId": "bal-hafenspeicher",
+                "quoteId": "Q-4E3916EC",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-15",
+                "totalEur": 25400,
+                "perGuestEur": 635,
+                "tradeOff": "Cheapest and has six meeting rooms with direct trains, but it is cool (about 15°C) and only free from 15 May.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "bal-duenenhof",
+                "quoteId": "Q-45C41E86",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-01",
+                "totalEur": 26520,
+                "perGuestEur": 663,
+                "tradeOff": "Beach terrace and spa with a direct train, but brisk in spring (about 15°C) and not warm.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "bal-seebruecke",
+                "quoteId": "Q-283E1F27",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-01",
+                "totalEur": 28200,
+                "perGuestEur": 705,
+                "tradeOff": "Promenade hotel with a beach club and sea-view rooms, but it costs more and is cool and windy in May.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Sales offsite for 40 guests, 2 nights in May 2027",
+              "body": "Hello,\n\nDemo Co. is looking for a 2-night sales offsite in May 2027. Please quote for:\n- Arrival dates: 2027-05-01 (or the nearest open date in May; 2027-05-15 for Hafenspeicher), 2 nights\n- 40 guests, 80 room nights (single occupancy)\n- One plenary meeting room for 40 for 3 days, with lunch and coffee. Breakout rooms: none required, but please tell us what is available.\n- Dietary needs: 6 vegetarian\n- Accessibility: 1 wheelchair user, so we need step-free access and an accessible room\n- Guests travel from Berlin by train\n\nPlease include a full all-in price and your terms. Please reply by 2026-10-30.\n\nThank you,\nDemo Co. Events"
+            }
+          }
+        }
+      ],
+      "inputTokens": 15256,
+      "outputTokens": 24
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 40,
+      "nights": 2,
+      "earliestDate": "2027-05-01",
+      "latestDate": "2027-05-31",
+      "budgetEur": 60000,
+      "wheelchairUsers": 1,
+      "breakoutRooms": 0,
+      "dietary": [
+        {
+          "label": "vegetarian",
+          "count": 6
+        }
+      ]
+    },
+    "summary": "The warm-sea venues in Lisbon and Mallorca are all blocked by policy, which allows no flights for events of 3 days or fewer. The three offers are step-free Baltic coast hotels reachable by train, all well under the EUR 60,000 budget. May is cool there, with highs around 15°C. Each needs budget-owner sign-off because it is over EUR 20,000.",
+    "offers": [
+      {
+        "venueId": "bal-hafenspeicher",
+        "quoteId": "Q-4E3916EC",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-15",
+        "totalEur": 25400,
+        "perGuestEur": 635,
+        "tradeOff": "Cheapest and has six meeting rooms with direct trains, but it is cool (about 15°C) and only free from 15 May.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "bal-duenenhof",
+        "quoteId": "Q-45C41E86",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-01",
+        "totalEur": 26520,
+        "perGuestEur": 663,
+        "tradeOff": "Beach terrace and spa with a direct train, but brisk in spring (about 15°C) and not warm.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "bal-seebruecke",
+        "quoteId": "Q-283E1F27",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-01",
+        "totalEur": 28200,
+        "perGuestEur": 705,
+        "tradeOff": "Promenade hotel with a beach club and sea-view rooms, but it costs more and is cool and windy in May.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Sales offsite for 40 guests, 2 nights in May 2027",
+      "body": "Hello,\n\nDemo Co. is looking for a 2-night sales offsite in May 2027. Please quote for:\n- Arrival dates: 2027-05-01 (or the nearest open date in May; 2027-05-15 for Hafenspeicher), 2 nights\n- 40 guests, 80 room nights (single occupancy)\n- One plenary meeting room for 40 for 3 days, with lunch and coffee. Breakout rooms: none required, but please tell us what is available.\n- Dietary needs: 6 vegetarian\n- Accessibility: 1 wheelchair user, so we need step-free access and an accessible room\n- Guests travel from Berlin by train\n\nPlease include a full all-in price and your terms. Please reply by 2026-10-30.\n\nThank you,\nDemo Co. Events"
+    }
+  },
+  "metrics": {
+    "numTurns": 26,
+    "inputTokens": 83372,
+    "outputTokens": 5147,
+    "costUsd": 0.1021776,
+    "durationMs": 33025
+  }
+}

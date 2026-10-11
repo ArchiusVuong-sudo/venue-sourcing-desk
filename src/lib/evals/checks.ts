@@ -181,8 +181,10 @@ export function runCheck(spec: CheckSpec, record: RunRecord, catalog: Venue[]): 
 }
 
 /** True when text states "<count> ... <label>" or "<label> ... <count>" within one short phrase. */
+const normDashes = (s: string) => s.toLowerCase().replace(/[‐-―]/g, "-");
+
 export function mentionsCount(text: string, label: string, count: number): boolean {
-  const norm = (s: string) => s.toLowerCase().replace(/[‐-―]/g, "-");
+  const norm = normDashes;
   const t = norm(text);
   const l = norm(label).replace(/[-\s]+/g, "[-\\s]?").replace(/s$/, "") + "\\w*";
   const n = `\\b${count}\\b`;

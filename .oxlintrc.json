@@ -5,7 +5,9 @@
   "rules": {
     "no-console": "off",
     "typescript/no-explicit-any": "error",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "no-underscore-dangle": "off",
+    "import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }]
   },
   "ignorePatterns": [".next", "node_modules", "drizzle"]
 }

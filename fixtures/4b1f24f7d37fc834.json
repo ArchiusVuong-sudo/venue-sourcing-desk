@@ -1,0 +1,306 @@
+{
+  "key": "4b1f24f7d37fc834",
+  "brief": "Board meeting in Hamburg for 12 people, 1 night, arriving 2027-04-08. Quiet and discreet, a harbour view would be lovely. Budget EUR 8,000.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:28.957Z",
+  "turns": [
+    {
+      "ms": 2221,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "quiet discreet harbour view boardroom",
+            "minCapacity": 12,
+            "minBedrooms": 12,
+            "regions": [
+              "Hamburg"
+            ]
+          }
+        }
+      ],
+      "inputTokens": 4702,
+      "outputTokens": 7
+    },
+    {
+      "ms": 1560,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "ham-elbblick",
+            "earliestDate": "2027-04-08",
+            "latestDate": "2027-04-08",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "ham-alstervilla",
+            "earliestDate": "2027-04-08",
+            "latestDate": "2027-04-08",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "ham-hafenkontor",
+            "earliestDate": "2027-04-08",
+            "latestDate": "2027-04-08",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "ham-kaispeicher",
+            "earliestDate": "2027-04-08",
+            "latestDate": "2027-04-08",
+            "nights": 1
+          }
+        }
+      ],
+      "inputTokens": 5836,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1654,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "ham-elbblick",
+            "guests": 12,
+            "nights": 1,
+            "startDate": "2027-04-08",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "ham-alstervilla",
+            "guests": 12,
+            "nights": 1,
+            "startDate": "2027-04-08",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "ham-hafenkontor",
+            "guests": 12,
+            "nights": 1,
+            "startDate": "2027-04-08",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "ham-kaispeicher",
+            "guests": 12,
+            "nights": 1,
+            "startDate": "2027-04-08",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 6755,
+      "outputTokens": 24
+    },
+    {
+      "ms": 4776,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "ham-elbblick",
+            "quoteId": null,
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 8000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "ham-alstervilla",
+            "quoteId": "Q-4B02FB1A",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 8000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "ham-hafenkontor",
+            "quoteId": "Q-CB712D04",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 8000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "ham-kaispeicher",
+            "quoteId": "Q-EE57CF89",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 8000
+          }
+        }
+      ],
+      "inputTokens": 8599,
+      "outputTokens": 24
+    },
+    {
+      "ms": 2607,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 12,
+              "nights": 1,
+              "earliestDate": "2027-04-08",
+              "latestDate": "2027-04-08",
+              "budgetEur": 8000,
+              "wheelchairUsers": 0,
+              "breakoutRooms": 0,
+              "dietary": []
+            },
+            "summary": "Three Hamburg venues are open on 2027-04-08 and policy-compliant. Elbblick Boardrooms fits best (harbour view, discreet), but its quote system failed after 3 tries, so it has no price yet. The two priced options, Hafenkontor and Kaispeicher, are well under the EUR 8,000 budget.",
+            "offers": [
+              {
+                "venueId": "ham-elbblick",
+                "quoteId": null,
+                "quoteStatus": "unavailable",
+                "startDate": "2027-04-08",
+                "totalEur": null,
+                "perGuestEur": null,
+                "tradeOff": "Best match: private boardrooms with harbour view, butler service, discreet; but no price available (quote service down), so the budget is unconfirmed.",
+                "policyNotes": [
+                  "Compliant; price rules not evaluated because there is no quote",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "ham-hafenkontor",
+                "quoteId": "Q-CB712D04",
+                "quoteStatus": "quoted",
+                "startDate": "2027-04-08",
+                "totalEur": 5292,
+                "perGuestEur": 441,
+                "tradeOff": "Quiet, central boutique ex-shipping office with a boardroom for 16; a harbour view isn't confirmed.",
+                "policyNotes": [
+                  "Compliant",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "ham-kaispeicher",
+                "quoteId": "Q-EE57CF89",
+                "quoteStatus": "quoted",
+                "startDate": "2027-04-08",
+                "totalEur": 5088,
+                "perGuestEur": 424,
+                "tradeOff": "Cheapest, with a harbour location and a top-floor boardroom; a large 100-room hotel, so less quiet and discreet.",
+                "policyNotes": [
+                  "Compliant",
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Board meeting enquiry: 12 guests, 1 night from 2027-04-08",
+              "body": "Hello,\n\nDemo Co. is planning a board meeting and would like a proposal.\n\nArrival: 2027-04-08, 1 night (departure 2027-04-09)\nGuests: 12, single-occupancy rooms (12 room nights)\nMeeting space: one boardroom for 12, quiet and discreet, harbour view preferred. No breakout rooms needed.\nCatering: day delegate package with lunch and coffee. Dietary needs: none reported.\nAccessibility: no wheelchair users.\nBudget: up to EUR 8,000 in total.\n\nPlease send availability, a full price breakdown and your terms by 2026-10-25.\n\nKind regards,\nDemo Co. Events"
+            }
+          }
+        }
+      ],
+      "inputTokens": 9719,
+      "outputTokens": 5
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 12,
+      "nights": 1,
+      "earliestDate": "2027-04-08",
+      "latestDate": "2027-04-08",
+      "budgetEur": 8000,
+      "wheelchairUsers": 0,
+      "breakoutRooms": 0,
+      "dietary": []
+    },
+    "summary": "Three Hamburg venues are open on 2027-04-08 and policy-compliant. Elbblick Boardrooms fits best (harbour view, discreet), but its quote system failed after 3 tries, so it has no price yet. The two priced options, Hafenkontor and Kaispeicher, are well under the EUR 8,000 budget.",
+    "offers": [
+      {
+        "venueId": "ham-elbblick",
+        "quoteId": null,
+        "quoteStatus": "unavailable",
+        "startDate": "2027-04-08",
+        "totalEur": null,
+        "perGuestEur": null,
+        "tradeOff": "Best match: private boardrooms with harbour view, butler service, discreet; but no price available (quote service down), so the budget is unconfirmed.",
+        "policyNotes": [
+          "Compliant; price rules not evaluated because there is no quote",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "ham-hafenkontor",
+        "quoteId": "Q-CB712D04",
+        "quoteStatus": "quoted",
+        "startDate": "2027-04-08",
+        "totalEur": 5292,
+        "perGuestEur": 441,
+        "tradeOff": "Quiet, central boutique ex-shipping office with a boardroom for 16; a harbour view isn't confirmed.",
+        "policyNotes": [
+          "Compliant",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "ham-kaispeicher",
+        "quoteId": "Q-EE57CF89",
+        "quoteStatus": "quoted",
+        "startDate": "2027-04-08",
+        "totalEur": 5088,
+        "perGuestEur": 424,
+        "tradeOff": "Cheapest, with a harbour location and a top-floor boardroom; a large 100-room hotel, so less quiet and discreet.",
+        "policyNotes": [
+          "Compliant",
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Board meeting enquiry: 12 guests, 1 night from 2027-04-08",
+      "body": "Hello,\n\nDemo Co. is planning a board meeting and would like a proposal.\n\nArrival: 2027-04-08, 1 night (departure 2027-04-09)\nGuests: 12, single-occupancy rooms (12 room nights)\nMeeting space: one boardroom for 12, quiet and discreet, harbour view preferred. No breakout rooms needed.\nCatering: day delegate package with lunch and coffee. Dietary needs: none reported.\nAccessibility: no wheelchair users.\nBudget: up to EUR 8,000 in total.\n\nPlease send availability, a full price breakdown and your terms by 2026-10-25.\n\nKind regards,\nDemo Co. Events"
+    }
+  },
+  "metrics": {
+    "numTurns": 15,
+    "inputTokens": 36851,
+    "outputTokens": 3469,
+    "costUsd": 0.0604653,
+    "durationMs": 26507
+  }
+}

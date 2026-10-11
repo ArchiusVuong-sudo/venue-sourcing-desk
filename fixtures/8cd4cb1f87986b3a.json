@@ -1,0 +1,317 @@
+{
+  "key": "8cd4cb1f87986b3a",
+  "brief": "Sales offsite for 40 people, 2 nights sometime in May 2027, somewhere warm by the sea. Budget EUR 60,000 all in. 6 of the group are vegetarian and 1 uses a wheelchair.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:01.963Z",
+  "turns": [
+    {
+      "ms": 2958,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "warm sea coastal resort",
+            "minCapacity": 40,
+            "minBedrooms": 40,
+            "stepFreeOnly": true,
+            "coastalOnly": true
+          }
+        }
+      ],
+      "inputTokens": 4714,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1184,
+      "text": "Warm candidates: lis-baia, pmi-llum, pmi-serena (plus olivera).",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lis-baia",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "pmi-llum",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "pmi-serena",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "pmi-olivera",
+            "earliestDate": "2027-05-01",
+            "latestDate": "2027-05-31",
+            "nights": 2
+          }
+        }
+      ],
+      "inputTokens": 6760,
+      "outputTokens": 60
+    },
+    {
+      "ms": 1550,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lis-baia",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "pmi-llum",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "pmi-serena",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-17",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "pmi-olivera",
+            "guests": 40,
+            "nights": 2,
+            "startDate": "2027-05-01",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 7774,
+      "outputTokens": 9
+    },
+    {
+      "ms": 1847,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lis-baia",
+            "quoteId": "Q-7B76749D",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "pmi-llum",
+            "quoteId": "Q-BF24C50F",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "pmi-serena",
+            "quoteId": "Q-BA990770",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "pmi-olivera",
+            "quoteId": "Q-1826FFE8",
+            "nights": 2,
+            "wheelchairUsers": 1,
+            "budgetEur": 60000
+          }
+        }
+      ],
+      "inputTokens": 9759,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1541,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 40,
+              "nights": 2,
+              "earliestDate": "2027-05-01",
+              "latestDate": "2027-05-31",
+              "budgetEur": 60000,
+              "wheelchairUsers": 1,
+              "breakoutRooms": 0,
+              "dietary": [
+                {
+                  "label": "vegetarian",
+                  "count": 6
+                }
+              ]
+            },
+            "summary": "Three warm, step-free coastal venues (Mallorca and Lisbon coast, about 23-24°C in May) fit well under the EUR 60,000 budget, and each needs budget-owner sign-off because it is over EUR 20,000. Quotes include rooms, day delegate package and flights from Berlin, and were priced with no breakout rooms since none were requested.",
+            "offers": [
+              {
+                "venueId": "pmi-serena",
+                "quoteId": "Q-BA990770",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-17",
+                "totalEur": 29840,
+                "perGuestEur": 746,
+                "tradeOff": "Cheapest, turquoise cove with sea-view plenary and 4 breakouts, but only open from 17 May and requires a flight.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "pmi-olivera",
+                "quoteId": "Q-1826FFE8",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-01",
+                "totalEur": 31120,
+                "perGuestEur": 778,
+                "tradeOff": "Preferred vendor with a warm, sunny olive estate, but it is not directly on the sea, has only 3 breakouts, and requires a flight.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Preferred vendor",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "lis-baia",
+                "quoteId": "Q-7B76749D",
+                "quoteStatus": "quoted",
+                "startDate": "2027-05-01",
+                "totalEur": 31680,
+                "perGuestEur": 792,
+                "tradeOff": "Beach resort with a large pool and 5 meeting rooms, available early May, but slightly pricier and requires a flight (about 290 min).",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Sales offsite for 40 guests, 2 nights, May 2027",
+              "body": "Hello,\n\nWe are planning a sales offsite for 40 guests, arriving on the date shown for your venue (Cala Serena: 17 May 2027; Finca Olivera and Baia Azul: 1 May 2027), 2 nights.\n\nNeeds:\n- 40 single-occupancy rooms, 80 room nights\n- One plenary meeting room for 40 and breakout rooms if available (please state how many)\n- Day delegate package with lunch and coffee for both full days\n- Dietary: 6 vegetarian\n- Accessibility: 1 wheelchair user, so we need step-free access and an accessible room\n\nPlease send your best all-in offer with availability, and say which alternative May dates you have open.\n\nPlease reply by 30 October 2026.\n\nThank you,\nDemo Co. Events"
+            }
+          }
+        }
+      ],
+      "inputTokens": 11060,
+      "outputTokens": 3
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 40,
+      "nights": 2,
+      "earliestDate": "2027-05-01",
+      "latestDate": "2027-05-31",
+      "budgetEur": 60000,
+      "wheelchairUsers": 1,
+      "breakoutRooms": 0,
+      "dietary": [
+        {
+          "label": "vegetarian",
+          "count": 6
+        }
+      ]
+    },
+    "summary": "Three warm, step-free coastal venues (Mallorca and Lisbon coast, about 23-24°C in May) fit well under the EUR 60,000 budget, and each needs budget-owner sign-off because it is over EUR 20,000. Quotes include rooms, day delegate package and flights from Berlin, and were priced with no breakout rooms since none were requested.",
+    "offers": [
+      {
+        "venueId": "pmi-serena",
+        "quoteId": "Q-BA990770",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-17",
+        "totalEur": 29840,
+        "perGuestEur": 746,
+        "tradeOff": "Cheapest, turquoise cove with sea-view plenary and 4 breakouts, but only open from 17 May and requires a flight.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "pmi-olivera",
+        "quoteId": "Q-1826FFE8",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-01",
+        "totalEur": 31120,
+        "perGuestEur": 778,
+        "tradeOff": "Preferred vendor with a warm, sunny olive estate, but it is not directly on the sea, has only 3 breakouts, and requires a flight.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Preferred vendor",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "lis-baia",
+        "quoteId": "Q-7B76749D",
+        "quoteStatus": "quoted",
+        "startDate": "2027-05-01",
+        "totalEur": 31680,
+        "perGuestEur": 792,
+        "tradeOff": "Beach resort with a large pool and 5 meeting rooms, available early May, but slightly pricier and requires a flight (about 290 min).",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Sales offsite for 40 guests, 2 nights, May 2027",
+      "body": "Hello,\n\nWe are planning a sales offsite for 40 guests, arriving on the date shown for your venue (Cala Serena: 17 May 2027; Finca Olivera and Baia Azul: 1 May 2027), 2 nights.\n\nNeeds:\n- 40 single-occupancy rooms, 80 room nights\n- One plenary meeting room for 40 and breakout rooms if available (please state how many)\n- Day delegate package with lunch and coffee for both full days\n- Dietary: 6 vegetarian\n- Accessibility: 1 wheelchair user, so we need step-free access and an accessible room\n\nPlease send your best all-in offer with availability, and say which alternative May dates you have open.\n\nPlease reply by 30 October 2026.\n\nThank you,\nDemo Co. Events"
+    }
+  },
+  "metrics": {
+    "numTurns": 15,
+    "inputTokens": 41319,
+    "outputTokens": 3396,
+    "costUsd": 0.06408649999999999,
+    "durationMs": 23294
+  }
+}

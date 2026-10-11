@@ -1,8 +1,12 @@
 import type { TraceStep } from "../domain/types";
 
-type Listener = (step: TraceStep, index: number) => void;
+type Listener = (steps: TraceStep[]) => void;
 
-/** Ordered step log for one run. Steps get an offset in ms from the run start. */
+/**
+ * Ordered step log for one run. Steps carry an offset in ms from the run start.
+ * A tool step is pushed when the call starts (ok: null) and updated when it ends,
+ * so the array order is the order things happened.
+ */
 export class TraceRecorder {
   readonly steps: TraceStep[] = [];
   private readonly listeners = new Set<Listener>();
@@ -12,26 +16,27 @@ export class TraceRecorder {
     return Date.now() - this.t0;
   }
 
-  push(step: TraceStep): void {
+  push<T extends TraceStep>(step: T): T {
     this.steps.push(step);
-    const index = this.steps.length - 1;
-    for (const listener of this.listeners) listener(step, index);
+    this.emit();
+    return step;
   }
 
-  /** Inserts a step before the first step at or after `beforeAt` (keeps model turns ahead of the tool calls they made). */
-  insertAt(step: TraceStep, beforeAt: number): void {
-    const idx = this.steps.findIndex((s) => s.at >= beforeAt && s.kind === "tool");
-    if (idx === -1) return this.push(step);
-    this.steps.splice(idx, 0, step);
-    for (const listener of this.listeners) listener(step, idx);
+  /** Call after mutating a step in place. */
+  touch(): void {
+    this.emit();
   }
 
   note(message: string): void {
     this.push({ kind: "note", at: this.now(), message });
   }
 
-  onStep(listener: Listener): () => void {
+  onChange(listener: Listener): () => void {
     this.listeners.add(listener);
     return () => this.listeners.delete(listener);
+  }
+
+  private emit(): void {
+    for (const listener of this.listeners) listener(this.steps);
   }
 }

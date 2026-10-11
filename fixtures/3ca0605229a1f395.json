@@ -1,0 +1,253 @@
+{
+  "key": "3ca0605229a1f395",
+  "brief": "Two-day workshop in Leipzig for 30 people, 1 night, arriving 2027-02-16. Keep it as cheap as possible, budget EUR 10,000.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:10:09.252Z",
+  "turns": [
+    {
+      "ms": 2396,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "workshop meeting rooms affordable",
+            "minCapacity": 30,
+            "minBedrooms": 30,
+            "regions": [
+              "Leipzig"
+            ]
+          }
+        }
+      ],
+      "inputTokens": 4695,
+      "outputTokens": 8
+    },
+    {
+      "ms": 1604,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lej-druckerei",
+            "earliestDate": "2027-02-16",
+            "latestDate": "2027-02-16",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lej-auwald",
+            "earliestDate": "2027-02-16",
+            "latestDate": "2027-02-16",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "lej-kesselhalle",
+            "earliestDate": "2027-02-16",
+            "latestDate": "2027-02-16",
+            "nights": 1
+          }
+        }
+      ],
+      "inputTokens": 5593,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1589,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lej-druckerei",
+            "guests": 30,
+            "nights": 1,
+            "startDate": "2027-02-16",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lej-auwald",
+            "guests": 30,
+            "nights": 1,
+            "startDate": "2027-02-16",
+            "breakoutRooms": 0
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "lej-kesselhalle",
+            "guests": 30,
+            "nights": 1,
+            "startDate": "2027-02-16",
+            "breakoutRooms": 0
+          }
+        }
+      ],
+      "inputTokens": 6285,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1738,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lej-druckerei",
+            "quoteId": "Q-78FFE0F4",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 10000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lej-auwald",
+            "quoteId": "Q-FD96ACE9",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 10000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "lej-kesselhalle",
+            "quoteId": "Q-34413FA8",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 10000
+          }
+        }
+      ],
+      "inputTokens": 7728,
+      "outputTokens": 26
+    },
+    {
+      "ms": 1536,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 30,
+              "nights": 1,
+              "earliestDate": "2027-02-16",
+              "latestDate": "2027-02-16",
+              "budgetEur": 10000,
+              "wheelchairUsers": 0,
+              "breakoutRooms": 0,
+              "dietary": []
+            },
+            "summary": "Two Leipzig seminar hotels are open on 2027-02-16 and comply with policy, and both are under the EUR 10,000 budget. The cheapest Leipzig option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Only three Leipzig venues matched, so the shortlist has two offers.",
+            "offers": [
+              {
+                "venueId": "lej-druckerei",
+                "quoteId": "Q-78FFE0F4",
+                "quoteStatus": "quoted",
+                "startDate": "2027-02-16",
+                "totalEur": 9240,
+                "perGuestEur": 308,
+                "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; it costs EUR 420 less than Auwald but is not a preferred vendor.",
+                "policyNotes": [
+                  "Compliant",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "lej-auwald",
+                "quoteId": "Q-FD96ACE9",
+                "quoteStatus": "quoted",
+                "startDate": "2027-02-16",
+                "totalEur": 9660,
+                "perGuestEur": 322,
+                "tradeOff": "Preferred vendor in a calm floodplain setting; it costs EUR 420 more than Druckerei Forum and has 3 breakout rooms instead of 4.",
+                "policyNotes": [
+                  "Compliant",
+                  "Preferred vendor",
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "Request for proposal: 2-day workshop, Leipzig, arriving 2027-02-16",
+              "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single rooms, 1 night\nMeeting space: one main meeting room for 30 people on both days. No separate breakout rooms are needed.\nCatering: lunch and coffee for 30 on both days (60 day delegate packages)\nDietary needs: none reported\nAccessibility: no wheelchair users; please confirm step-free access anyway.\nBudget: our total budget is EUR 10,000, so please quote your best all-in price.\n\nPlease reply by 2026-11-15 with availability, a price breakdown and your terms.\n\nThank you,\nDemo Co. Events"
+            }
+          }
+        }
+      ],
+      "inputTokens": 8628,
+      "outputTokens": 5
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 30,
+      "nights": 1,
+      "earliestDate": "2027-02-16",
+      "latestDate": "2027-02-16",
+      "budgetEur": 10000,
+      "wheelchairUsers": 0,
+      "breakoutRooms": 0,
+      "dietary": []
+    },
+    "summary": "Two Leipzig seminar hotels are open on 2027-02-16 and comply with policy, and both are under the EUR 10,000 budget. The cheapest Leipzig option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Only three Leipzig venues matched, so the shortlist has two offers.",
+    "offers": [
+      {
+        "venueId": "lej-druckerei",
+        "quoteId": "Q-78FFE0F4",
+        "quoteStatus": "quoted",
+        "startDate": "2027-02-16",
+        "totalEur": 9240,
+        "perGuestEur": 308,
+        "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; it costs EUR 420 less than Auwald but is not a preferred vendor.",
+        "policyNotes": [
+          "Compliant",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "lej-auwald",
+        "quoteId": "Q-FD96ACE9",
+        "quoteStatus": "quoted",
+        "startDate": "2027-02-16",
+        "totalEur": 9660,
+        "perGuestEur": 322,
+        "tradeOff": "Preferred vendor in a calm floodplain setting; it costs EUR 420 more than Druckerei Forum and has 3 breakout rooms instead of 4.",
+        "policyNotes": [
+          "Compliant",
+          "Preferred vendor",
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "Request for proposal: 2-day workshop, Leipzig, arriving 2027-02-16",
+      "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single rooms, 1 night\nMeeting space: one main meeting room for 30 people on both days. No separate breakout rooms are needed.\nCatering: lunch and coffee for 30 on both days (60 day delegate packages)\nDietary needs: none reported\nAccessibility: no wheelchair users; please confirm step-free access anyway.\nBudget: our total budget is EUR 10,000, so please quote your best all-in price.\n\nPlease reply by 2026-11-15 with availability, a price breakdown and your terms.\n\nThank you,\nDemo Co. Events"
+    }
+  },
+  "metrics": {
+    "numTurns": 12,
+    "inputTokens": 34162,
+    "outputTokens": 2696,
+    "costUsd": 0.046960100000000005,
+    "durationMs": 18105
+  }
+}

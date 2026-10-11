@@ -72,8 +72,8 @@ export const policyFingerprint = (policy: Policy): string =>
   JSON.stringify({
     signoff: policy.signoffThresholdEur,
     cap: policy.perGuestCapEur,
-    preferred: [...policy.preferredVendorIds].sort(),
-    blocked: [...policy.blockedVendorIds].sort(),
+    preferred: policy.preferredVendorIds.toSorted(),
+    blocked: policy.blockedVendorIds.toSorted(),
     noFlights: policy.noFlightsShortEvents,
     shortDays: policy.shortEventMaxDays,
   });

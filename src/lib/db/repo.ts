@@ -41,7 +41,7 @@ export async function searchVenues(db: Db, q: VenueSearch): Promise<Array<Venue 
     .slice(0, 12);
   const tsQuery = words.length ? words.join(" | ") : "";
   const doc = sql`to_tsvector('english', ${s.vendors.name} || ' ' || ${s.vendors.region} || ' ' || ${s.vendors.city} || ' ' || ${s.vendors.description})`;
-  const rank = tsQuery ? sql<number>`ts_rank(${doc}, to_tsquery('english', ${tsQuery}))` : sql<number>`0`;
+  const rank = tsQuery ? sql<number>`ts_rank(${doc}, to_tsquery('english', ${tsQuery}))` : sql<number>`0::real`;
 
   const filters = [sql`${s.vendors.capacity} >= ${q.minCapacity}`];
   if (q.minBedrooms) filters.push(sql`${s.vendors.bedrooms} >= ${q.minBedrooms}`);

@@ -1,0 +1,278 @@
+{
+  "key": "ba754e1934e97d24",
+  "brief": "Sales kick-off in or near Munich for 120 people, 1 night, arriving 2027-01-20. We need a plenary room plus 4 breakout rooms for the regional sessions. Budget EUR 70,000 all in.",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:50.649Z",
+  "turns": [
+    {
+      "ms": 2369,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "search_venues",
+          "input": {
+            "query": "Munich conference hotel plenary breakout rooms",
+            "minCapacity": 120,
+            "minBedrooms": 120,
+            "minBreakoutRooms": 4,
+            "regions": [
+              "Munich"
+            ]
+          }
+        }
+      ],
+      "inputTokens": 4713,
+      "outputTokens": 5
+    },
+    {
+      "ms": 1552,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "muc-isarforum",
+            "earliestDate": "2027-01-20",
+            "latestDate": "2027-01-20",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "muc-alpenblick",
+            "earliestDate": "2027-01-20",
+            "latestDate": "2027-01-20",
+            "nights": 1
+          }
+        },
+        {
+          "name": "check_availability",
+          "input": {
+            "venueId": "muc-maelzerei",
+            "earliestDate": "2027-01-20",
+            "latestDate": "2027-01-20",
+            "nights": 1
+          }
+        }
+      ],
+      "inputTokens": 5644,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1649,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "muc-isarforum",
+            "guests": 120,
+            "nights": 1,
+            "startDate": "2027-01-20",
+            "breakoutRooms": 4
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "muc-alpenblick",
+            "guests": 120,
+            "nights": 1,
+            "startDate": "2027-01-20",
+            "breakoutRooms": 4
+          }
+        },
+        {
+          "name": "get_quote",
+          "input": {
+            "venueId": "muc-maelzerei",
+            "guests": 120,
+            "nights": 1,
+            "startDate": "2027-01-20",
+            "breakoutRooms": 4
+          }
+        }
+      ],
+      "inputTokens": 6338,
+      "outputTokens": 24
+    },
+    {
+      "ms": 1700,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "muc-isarforum",
+            "quoteId": "Q-39526092",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 70000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "muc-alpenblick",
+            "quoteId": "Q-C63EFD18",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 70000
+          }
+        },
+        {
+          "name": "check_policy",
+          "input": {
+            "venueId": "muc-maelzerei",
+            "quoteId": "Q-A62559BD",
+            "nights": 1,
+            "wheelchairUsers": 0,
+            "budgetEur": 70000
+          }
+        }
+      ],
+      "inputTokens": 7926,
+      "outputTokens": 24
+    },
+    {
+      "ms": 7833,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "shortlist",
+            "question": null,
+            "understood": {
+              "guests": 120,
+              "nights": 1,
+              "earliestDate": "2027-01-20",
+              "latestDate": "2027-01-20",
+              "budgetEur": 70000,
+              "wheelchairUsers": 0,
+              "breakoutRooms": 4,
+              "dietary": []
+            },
+            "summary": "Three Munich-area venues are open on 2027-01-20 and all quote under the EUR 70,000 budget (EUR 55,200 to 59,680, including estimated group travel from Berlin). All three need budget-owner sign-off because they are over EUR 20,000, plus expert review before any vendor contact. No dietary needs were given, so the RFP asks venues to confirm vegetarian, vegan and gluten-free options.",
+            "offers": [
+              {
+                "venueId": "muc-maelzerei",
+                "quoteId": "Q-A62559BD",
+                "quoteStatus": "quoted",
+                "startDate": "2027-01-20",
+                "totalEur": 55200,
+                "perGuestEur": 460,
+                "tradeOff": "Cheapest and has 5 breakout rooms, but its hotel has exactly 120 rooms (no spare) and it is a livelier party-style venue.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "muc-isarforum",
+                "quoteId": "Q-39526092",
+                "quoteStatus": "quoted",
+                "startDate": "2027-01-20",
+                "totalEur": 57960,
+                "perGuestEur": 483,
+                "tradeOff": "Purpose-built for sales kick-offs with a 250-seat plenary, 8 breakouts and spare rooms, for about EUR 2,760 more than the cheapest.",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              },
+              {
+                "venueId": "muc-alpenblick",
+                "quoteId": "Q-C63EFD18",
+                "quoteStatus": "quoted",
+                "startDate": "2027-01-20",
+                "totalEur": 59680,
+                "perGuestEur": 497,
+                "tradeOff": "Quiet foothills setting with mountain views, but the most expensive, a 5-hour train ride, and only 4 breakouts and 130 rooms (little headroom).",
+                "policyNotes": [
+                  "Over EUR 20,000: needs budget-owner sign-off",
+                  "Expert review before any vendor contact"
+                ]
+              }
+            ],
+            "rfp": {
+              "subject": "RFP: Sales kick-off, 120 guests, 1 night from 2027-01-20",
+              "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal.\n\nArrival: 2027-01-20, 1 night (departure 2027-01-21)\nGuests: 120\nRoom nights: 120 single-occupancy bedrooms x 1 night\nMeeting space: 1 plenary room for 120 and 4 breakout rooms for regional sessions\nCatering: day delegate package with lunch and coffee. Dietary needs: no counts given yet. Please confirm vegetarian, vegan and gluten-free options.\nAccessibility: 0 wheelchair users. Step-free access is preferred.\nBudget: all-in budget of EUR 70,000 for the event, including group travel from Berlin.\n\nPlease send availability, an itemised price and your terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
+            }
+          }
+        }
+      ],
+      "inputTokens": 8895,
+      "outputTokens": 24
+    }
+  ],
+  "answer": {
+    "outcome": "shortlist",
+    "question": null,
+    "understood": {
+      "guests": 120,
+      "nights": 1,
+      "earliestDate": "2027-01-20",
+      "latestDate": "2027-01-20",
+      "budgetEur": 70000,
+      "wheelchairUsers": 0,
+      "breakoutRooms": 4,
+      "dietary": []
+    },
+    "summary": "Three Munich-area venues are open on 2027-01-20 and all quote under the EUR 70,000 budget (EUR 55,200 to 59,680, including estimated group travel from Berlin). All three need budget-owner sign-off because they are over EUR 20,000, plus expert review before any vendor contact. No dietary needs were given, so the RFP asks venues to confirm vegetarian, vegan and gluten-free options.",
+    "offers": [
+      {
+        "venueId": "muc-maelzerei",
+        "quoteId": "Q-A62559BD",
+        "quoteStatus": "quoted",
+        "startDate": "2027-01-20",
+        "totalEur": 55200,
+        "perGuestEur": 460,
+        "tradeOff": "Cheapest and has 5 breakout rooms, but its hotel has exactly 120 rooms (no spare) and it is a livelier party-style venue.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "muc-isarforum",
+        "quoteId": "Q-39526092",
+        "quoteStatus": "quoted",
+        "startDate": "2027-01-20",
+        "totalEur": 57960,
+        "perGuestEur": 483,
+        "tradeOff": "Purpose-built for sales kick-offs with a 250-seat plenary, 8 breakouts and spare rooms, for about EUR 2,760 more than the cheapest.",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      },
+      {
+        "venueId": "muc-alpenblick",
+        "quoteId": "Q-C63EFD18",
+        "quoteStatus": "quoted",
+        "startDate": "2027-01-20",
+        "totalEur": 59680,
+        "perGuestEur": 497,
+        "tradeOff": "Quiet foothills setting with mountain views, but the most expensive, a 5-hour train ride, and only 4 breakouts and 130 rooms (little headroom).",
+        "policyNotes": [
+          "Over EUR 20,000: needs budget-owner sign-off",
+          "Expert review before any vendor contact"
+        ]
+      }
+    ],
+    "rfp": {
+      "subject": "RFP: Sales kick-off, 120 guests, 1 night from 2027-01-20",
+      "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal.\n\nArrival: 2027-01-20, 1 night (departure 2027-01-21)\nGuests: 120\nRoom nights: 120 single-occupancy bedrooms x 1 night\nMeeting space: 1 plenary room for 120 and 4 breakout rooms for regional sessions\nCatering: day delegate package with lunch and coffee. Dietary needs: no counts given yet. Please confirm vegetarian, vegan and gluten-free options.\nAccessibility: 0 wheelchair users. Step-free access is preferred.\nBudget: all-in budget of EUR 70,000 for the event, including group travel from Berlin.\n\nPlease send availability, an itemised price and your terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
+    }
+  },
+  "metrics": {
+    "numTurns": 12,
+    "inputTokens": 34767,
+    "outputTokens": 2922,
+    "costUsd": 0.050251699999999996,
+    "durationMs": 21168
+  }
+}

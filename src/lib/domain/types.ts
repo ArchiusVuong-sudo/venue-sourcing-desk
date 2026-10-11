@@ -158,7 +158,8 @@ export type TraceStep =
       name: string;
       input: unknown;
       output: unknown;
-      ok: boolean;
+      /** null while the call is running */
+      ok: boolean | null;
     }
   | { kind: "retry"; at: number; scope: "quote" | "llm"; message: string }
   | { kind: "guard"; at: number; message: string; ok: boolean }

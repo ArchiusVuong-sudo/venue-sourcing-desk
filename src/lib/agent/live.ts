@@ -13,7 +13,7 @@ const MAX_TURNS = 14;
 const RETRYABLE = new Set(["rate_limit", "overloaded", "server_error"]);
 
 /** Child env from an allowlist: no CLAUDECODE / CLAUDE_CODE_* or anything else from the parent leaks in. */
-export function childEnv(source: NodeJS.ProcessEnv = process.env): Record<string, string> {
+export function childEnv(source: Record<string, string | undefined> = process.env): Record<string, string> {
   const env: Record<string, string> = {};
   for (const key of ["PATH", "HOME", "USER", "LANG", "TMPDIR", "ANTHROPIC_API_KEY"]) {
     const value = source[key];
@@ -76,8 +76,9 @@ async function runOnce({ brief, ctx, signal }: ProviderInput): Promise<ProviderR
   const turns: RecordedTurn[] = [];
   const byMessageId = new Map<string, { turn: RecordedTurn; step: Extract<TraceStep, { kind: "model" }> }>();
   let lastEventAt = Date.now();
-  const unsubscribe = ctx.trace.onStep((step) => {
-    if (step.kind === "tool") lastEventAt = Date.now();
+  const unsubscribe = ctx.trace.onChange((steps) => {
+    const last = steps[steps.length - 1];
+    if (last?.kind === "tool" && last.ok !== null) lastEventAt = Date.now();
   });
 
   try {

@@ -188,8 +188,8 @@ export const TOOL_NAMES = TOOLS.map((t) => t.name);
  */
 export async function executeTool(name: string, rawInput: unknown, ctx: ToolContext): Promise<{ ok: boolean; output: unknown }> {
   const spec = TOOLS.find((t) => t.name === name);
-  const at = ctx.trace.now();
   const started = Date.now();
+  const step = ctx.trace.push({ kind: "tool", at: ctx.trace.now(), ms: 0, name, input: rawInput, output: null as unknown, ok: null as boolean | null });
   let ok = true;
   let output: unknown;
   if (!spec) {
@@ -210,6 +210,9 @@ export async function executeTool(name: string, rawInput: unknown, ctx: ToolCont
       }
     }
   }
-  ctx.trace.push({ kind: "tool", at, ms: Date.now() - started, name, input: rawInput, output, ok });
+  step.ms = Date.now() - started;
+  step.output = output;
+  step.ok = ok;
+  ctx.trace.touch();
   return { ok, output };
 }

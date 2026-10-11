@@ -1,0 +1,61 @@
+{
+  "key": "5b5da8c00e1614c3",
+  "brief": "We'd like an offsite near Lisbon for the product team, around 25 people. Can you find something nice?",
+  "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
+  "model": "claude-sonnet-5-5",
+  "recordedAt": "2026-10-11T03:09:55.382Z",
+  "turns": [
+    {
+      "ms": 3793,
+      "text": "",
+      "toolCalls": [
+        {
+          "name": "StructuredOutput",
+          "input": {
+            "outcome": "needs_info",
+            "question": "What dates (earliest and latest arrival, plus number of nights) and what total budget in EUR do you have in mind for the offsite?",
+            "understood": {
+              "guests": 25,
+              "nights": null,
+              "earliestDate": null,
+              "latestDate": null,
+              "budgetEur": null,
+              "wheelchairUsers": 0,
+              "breakoutRooms": 0,
+              "dietary": []
+            },
+            "summary": "The request is for a Lisbon-area offsite for about 25 people, but it has no dates and no budget. I haven't searched yet. Once I have the date window, number of nights and budget, I'll build the shortlist.",
+            "offers": [],
+            "rfp": null
+          }
+        }
+      ],
+      "inputTokens": 4671,
+      "outputTokens": 344
+    }
+  ],
+  "answer": {
+    "outcome": "needs_info",
+    "question": "What dates (earliest and latest arrival, plus number of nights) and what total budget in EUR do you have in mind for the offsite?",
+    "understood": {
+      "guests": 25,
+      "nights": null,
+      "earliestDate": null,
+      "latestDate": null,
+      "budgetEur": null,
+      "wheelchairUsers": 0,
+      "breakoutRooms": 0,
+      "dietary": []
+    },
+    "summary": "The request is for a Lisbon-area offsite for about 25 people, but it has no dates and no budget. I haven't searched yet. Once I have the date window, number of nights and budget, I'll build the shortlist.",
+    "offers": [],
+    "rfp": null
+  },
+  "metrics": {
+    "numTurns": 2,
+    "inputTokens": 5880,
+    "outputTokens": 363,
+    "costUsd": 0.0054765000000000005,
+    "durationMs": 3809
+  }
+}
