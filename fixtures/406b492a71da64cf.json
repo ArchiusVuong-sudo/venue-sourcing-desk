@@ -3,17 +3,17 @@
   "brief": "We'd like an offsite near Lisbon for the product team, around 25 people. Can you find something nice?",
   "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
   "model": "claude-sonnet-5-5",
-  "recordedAt": "2026-10-11T03:09:04.215Z",
+  "recordedAt": "2026-10-11T03:30:41.951Z",
   "turns": [
     {
-      "ms": 3497,
+      "ms": 3905,
       "text": "",
       "toolCalls": [
         {
           "name": "StructuredOutput",
           "input": {
             "outcome": "needs_info",
-            "question": "What dates (earliest and latest arrival), how many nights, and what total budget in EUR should we plan for the 25-person Lisbon offsite?",
+            "question": "What dates (earliest and latest arrival, plus number of nights) and what total budget in EUR should we plan for the 25-person Lisbon offsite?",
             "understood": {
               "guests": 25,
               "nights": null,
@@ -24,19 +24,19 @@
               "breakoutRooms": 0,
               "dietary": []
             },
-            "summary": "The request is for about 25 people near Lisbon, but it has no dates and no budget. I haven't searched yet. I need those details first.",
+            "summary": "The request for a Lisbon-area offsite for about 25 people is missing the dates and the budget. I haven't searched yet and need those two details first.",
             "offers": [],
             "rfp": null
           }
         }
       ],
       "inputTokens": 4671,
-      "outputTokens": 323
+      "outputTokens": 329
     }
   ],
   "answer": {
     "outcome": "needs_info",
-    "question": "What dates (earliest and latest arrival), how many nights, and what total budget in EUR should we plan for the 25-person Lisbon offsite?",
+    "question": "What dates (earliest and latest arrival, plus number of nights) and what total budget in EUR should we plan for the 25-person Lisbon offsite?",
     "understood": {
       "guests": 25,
       "nights": null,
@@ -47,15 +47,15 @@
       "breakoutRooms": 0,
       "dietary": []
     },
-    "summary": "The request is for about 25 people near Lisbon, but it has no dates and no budget. I haven't searched yet. I need those details first.",
+    "summary": "The request for a Lisbon-area offsite for about 25 people is missing the dates and the budget. I haven't searched yet and need those two details first.",
     "offers": [],
     "rfp": null
   },
   "metrics": {
     "numTurns": 2,
     "inputTokens": 5880,
-    "outputTokens": 342,
-    "costUsd": 0.0064053,
-    "durationMs": 3511
+    "outputTokens": 349,
+    "costUsd": 0.005326999999999999,
+    "durationMs": 3920
   }
 }

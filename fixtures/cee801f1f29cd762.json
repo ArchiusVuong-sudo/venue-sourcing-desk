@@ -3,10 +3,10 @@
   "brief": "Sales kick-off in or near Munich for 120 people, 1 night, arriving 2027-01-20. We need a plenary room plus 4 breakout rooms for the regional sessions. Budget EUR 70,000 all in.",
   "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
   "model": "claude-sonnet-5-5",
-  "recordedAt": "2026-10-11T03:08:59.762Z",
+  "recordedAt": "2026-10-11T03:30:37.160Z",
   "turns": [
     {
-      "ms": 2500,
+      "ms": 2481,
       "text": "",
       "toolCalls": [
         {
@@ -23,10 +23,10 @@
         }
       ],
       "inputTokens": 4713,
-      "outputTokens": 8
+      "outputTokens": 5
     },
     {
-      "ms": 1559,
+      "ms": 1718,
       "text": "",
       "toolCalls": [
         {
@@ -57,11 +57,11 @@
           }
         }
       ],
-      "inputTokens": 5645,
-      "outputTokens": 24
+      "inputTokens": 5659,
+      "outputTokens": 28
     },
     {
-      "ms": 1721,
+      "ms": 1376,
       "text": "",
       "toolCalls": [
         {
@@ -95,11 +95,11 @@
           }
         }
       ],
-      "inputTokens": 6339,
-      "outputTokens": 24
+      "inputTokens": 6353,
+      "outputTokens": 9
     },
     {
-      "ms": 1694,
+      "ms": 1771,
       "text": "",
       "toolCalls": [
         {
@@ -133,11 +133,11 @@
           }
         }
       ],
-      "inputTokens": 7927,
-      "outputTokens": 24
+      "inputTokens": 7969,
+      "outputTokens": 26
     },
     {
-      "ms": 7394,
+      "ms": 7529,
       "text": "",
       "toolCalls": [
         {
@@ -155,7 +155,7 @@
               "breakoutRooms": 4,
               "dietary": []
             },
-            "summary": "Three Munich-area venues are open on 2027-01-20 and all quote under the EUR 70,000 budget. All three need budget-owner sign-off because they are over EUR 20,000, and the quotes include an EUR 18,000 group travel estimate. The planner gave no dietary or wheelchair needs, so the RFP lists none.",
+            "summary": "Three Munich-area venues are open on 2027-01-20 and priced within the EUR 70,000 budget, all including an estimated EUR 18,000 group train travel from Berlin. All three need budget-owner sign-off because they are over EUR 20,000. Alte Maelzerei is the cheapest, and Isarforum has the most room to grow.",
             "offers": [
               {
                 "venueId": "muc-maelzerei",
@@ -164,7 +164,7 @@
                 "startDate": "2027-01-20",
                 "totalEur": 55200,
                 "perGuestEur": 460,
-                "tradeOff": "Cheapest option and has 5 breakout rooms; the 150-seat hall is the smallest plenary of the top two, and the venue is lively rather than quiet.",
+                "tradeOff": "Lowest price with hotel next door and 5 breakouts; the 150-seat hall is the smallest margin and the vibe is lively rather than formal.",
                 "policyNotes": [
                   "Over EUR 20,000: needs budget-owner sign-off",
                   "Expert review before any vendor contact"
@@ -177,7 +177,7 @@
                 "startDate": "2027-01-20",
                 "totalEur": 57960,
                 "perGuestEur": 483,
-                "tradeOff": "Best fit for a sales kick-off: 250-seat plenary, 8 breakout rooms and a large foyer; costs about EUR 2,760 more than Alte Maelzerei.",
+                "tradeOff": "Purpose-built for sales kick-offs with a 250-seat plenary and 8 breakouts; costs about EUR 2,760 more than Maelzerei.",
                 "policyNotes": [
                   "Over EUR 20,000: needs budget-owner sign-off",
                   "Expert review before any vendor contact"
@@ -190,7 +190,7 @@
                 "startDate": "2027-01-20",
                 "totalEur": 59680,
                 "perGuestEur": 497,
-                "tradeOff": "Mountain-view setting, but it is the priciest, has exactly 4 breakout rooms, a 130-seat hall, and the longest trip from Berlin (about 5 hours by train).",
+                "tradeOff": "Mountain-view setting with exactly 4 breakouts; most expensive, farthest from Berlin by train (about 5 h) and outside Munich in Tegernheim.",
                 "policyNotes": [
                   "Over EUR 20,000: needs budget-owner sign-off",
                   "Expert review before any vendor contact"
@@ -199,12 +199,12 @@
             ],
             "rfp": {
               "subject": "RFP: Sales kick-off, 120 guests, arrival 2027-01-20, 1 night",
-              "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal.\n\nArrival: 2027-01-20, departure 2027-01-21 (1 night)\nGuests: 120\nRoom nights: 120 single-occupancy rooms x 1 night\nMeeting space: 1 plenary room for 120 people plus 4 breakout rooms for regional sessions\nCatering: day delegate package with lunch and coffee. Dietary needs: none reported so far.\nAccessibility: no wheelchair users reported; step-free access is preferred.\nBudget: up to EUR 70,000 all in.\n\nPlease send availability, a itemised price and your terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
+              "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal for:\n- Arrival 2027-01-20, 1 night (departure 2027-01-21)\n- 120 guests, 120 single-occupancy room nights\n- One plenary room for 120 people plus 4 breakout rooms for regional sessions\n- Day delegate package (meeting room, lunch, coffee) for both days\n- Dietary needs: none specified yet; please confirm vegetarian, vegan and gluten-free options\n- Accessibility: no wheelchair users currently; step-free access preferred\n- Budget guide: EUR 70,000 all in, including group travel from Berlin\n\nPlease send availability, a full price breakdown and terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
             }
           }
         }
       ],
-      "inputTokens": 8896,
+      "inputTokens": 8938,
       "outputTokens": 24
     }
   ],
@@ -221,7 +221,7 @@
       "breakoutRooms": 4,
       "dietary": []
     },
-    "summary": "Three Munich-area venues are open on 2027-01-20 and all quote under the EUR 70,000 budget. All three need budget-owner sign-off because they are over EUR 20,000, and the quotes include an EUR 18,000 group travel estimate. The planner gave no dietary or wheelchair needs, so the RFP lists none.",
+    "summary": "Three Munich-area venues are open on 2027-01-20 and priced within the EUR 70,000 budget, all including an estimated EUR 18,000 group train travel from Berlin. All three need budget-owner sign-off because they are over EUR 20,000. Alte Maelzerei is the cheapest, and Isarforum has the most room to grow.",
     "offers": [
       {
         "venueId": "muc-maelzerei",
@@ -230,7 +230,7 @@
         "startDate": "2027-01-20",
         "totalEur": 55200,
         "perGuestEur": 460,
-        "tradeOff": "Cheapest option and has 5 breakout rooms; the 150-seat hall is the smallest plenary of the top two, and the venue is lively rather than quiet.",
+        "tradeOff": "Lowest price with hotel next door and 5 breakouts; the 150-seat hall is the smallest margin and the vibe is lively rather than formal.",
         "policyNotes": [
           "Over EUR 20,000: needs budget-owner sign-off",
           "Expert review before any vendor contact"
@@ -243,7 +243,7 @@
         "startDate": "2027-01-20",
         "totalEur": 57960,
         "perGuestEur": 483,
-        "tradeOff": "Best fit for a sales kick-off: 250-seat plenary, 8 breakout rooms and a large foyer; costs about EUR 2,760 more than Alte Maelzerei.",
+        "tradeOff": "Purpose-built for sales kick-offs with a 250-seat plenary and 8 breakouts; costs about EUR 2,760 more than Maelzerei.",
         "policyNotes": [
           "Over EUR 20,000: needs budget-owner sign-off",
           "Expert review before any vendor contact"
@@ -256,7 +256,7 @@
         "startDate": "2027-01-20",
         "totalEur": 59680,
         "perGuestEur": 497,
-        "tradeOff": "Mountain-view setting, but it is the priciest, has exactly 4 breakout rooms, a 130-seat hall, and the longest trip from Berlin (about 5 hours by train).",
+        "tradeOff": "Mountain-view setting with exactly 4 breakouts; most expensive, farthest from Berlin by train (about 5 h) and outside Munich in Tegernheim.",
         "policyNotes": [
           "Over EUR 20,000: needs budget-owner sign-off",
           "Expert review before any vendor contact"
@@ -265,14 +265,14 @@
     ],
     "rfp": {
       "subject": "RFP: Sales kick-off, 120 guests, arrival 2027-01-20, 1 night",
-      "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal.\n\nArrival: 2027-01-20, departure 2027-01-21 (1 night)\nGuests: 120\nRoom nights: 120 single-occupancy rooms x 1 night\nMeeting space: 1 plenary room for 120 people plus 4 breakout rooms for regional sessions\nCatering: day delegate package with lunch and coffee. Dietary needs: none reported so far.\nAccessibility: no wheelchair users reported; step-free access is preferred.\nBudget: up to EUR 70,000 all in.\n\nPlease send availability, a itemised price and your terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
+      "body": "Hello,\n\nDemo Co. is planning a sales kick-off and would like a proposal for:\n- Arrival 2027-01-20, 1 night (departure 2027-01-21)\n- 120 guests, 120 single-occupancy room nights\n- One plenary room for 120 people plus 4 breakout rooms for regional sessions\n- Day delegate package (meeting room, lunch, coffee) for both days\n- Dietary needs: none specified yet; please confirm vegetarian, vegan and gluten-free options\n- Accessibility: no wheelchair users currently; step-free access preferred\n- Budget guide: EUR 70,000 all in, including group travel from Berlin\n\nPlease send availability, a full price breakdown and terms by 2026-10-25.\n\nThank you,\nDemo Co. Events"
     }
   },
   "metrics": {
     "numTurns": 12,
-    "inputTokens": 34771,
-    "outputTokens": 2868,
-    "costUsd": 0.051047100000000005,
-    "durationMs": 20976
+    "inputTokens": 34883,
+    "outputTokens": 2917,
+    "costUsd": 0.05040950000000001,
+    "durationMs": 21481
   }
 }

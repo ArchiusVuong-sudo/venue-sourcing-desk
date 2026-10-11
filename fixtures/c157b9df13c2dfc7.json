@@ -3,10 +3,10 @@
   "brief": "Team retreat in Berlin for 14 people, 2 nights from 2027-03-10. Somewhere quiet and inspiring where we can also sleep. Budget EUR 9,000.",
   "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
   "model": "claude-sonnet-5-5",
-  "recordedAt": "2026-10-11T03:09:50.715Z",
+  "recordedAt": "2026-10-11T03:31:30.562Z",
   "turns": [
     {
-      "ms": 3034,
+      "ms": 2574,
       "text": "",
       "toolCalls": [
         {
@@ -18,12 +18,12 @@
           }
         }
       ],
-      "inputTokens": 4700,
-      "outputTokens": 8
+      "inputTokens": 4698,
+      "outputTokens": 6
     },
     {
-      "ms": 1496,
-      "text": "Top candidates: Kastanie, Hofgarten, Lindenufer (Berlin), Seeblick.",
+      "ms": 1441,
+      "text": "Berlin venues: Kastanie, Hofgarten, Lindenufer. Window assumed 2027-03-10 to 2027-03-17.",
       "toolCalls": [
         {
           "name": "check_availability",
@@ -62,11 +62,11 @@
           }
         }
       ],
-      "inputTokens": 6837,
-      "outputTokens": 68
+      "inputTokens": 6774,
+      "outputTokens": 76
     },
     {
-      "ms": 1706,
+      "ms": 1679,
       "text": "",
       "toolCalls": [
         {
@@ -110,11 +110,11 @@
           }
         }
       ],
-      "inputTokens": 7816,
+      "inputTokens": 7765,
       "outputTokens": 24
     },
     {
-      "ms": 1775,
+      "ms": 1857,
       "text": "",
       "toolCalls": [
         {
@@ -158,11 +158,11 @@
           }
         }
       ],
-      "inputTokens": 9722,
+      "inputTokens": 9671,
       "outputTokens": 24
     },
     {
-      "ms": 6585,
+      "ms": 6959,
       "text": "",
       "toolCalls": [
         {
@@ -180,7 +180,7 @@
               "breakoutRooms": 0,
               "dietary": []
             },
-            "summary": "Three quiet Berlin-area venues with on-site rooms are open from 2027-03-10 and all fit the EUR 9,000 budget. Villa Kastanie is a preferred vendor and the best fit for \"quiet and inspiring\". Quotes were priced without breakout rooms, and no latest date was given, so I searched 10–17 March.",
+            "summary": "Three quiet, policy-compliant venues are open for arrival on 2027-03-10, and all quote under the EUR 9,000 budget. Villa Kastanie is a preferred vendor and fits the \"quiet and inspiring\" brief best. You gave no end of the date window, so I checked 10–17 March, and no dietary needs or breakout rooms were given.",
             "offers": [
               {
                 "venueId": "brl-kastanie",
@@ -189,7 +189,7 @@
                 "startDate": "2027-03-10",
                 "totalEur": 7686,
                 "perGuestEur": 549,
-                "tradeOff": "Leafy villa with library and garden, 30 min away and a preferred vendor; costs more than Hofgarten.",
+                "tradeOff": "Library, garden and 14 calm rooms in a preferred-vendor villa; costs more than Hofgarten.",
                 "policyNotes": [
                   "Preferred vendor",
                   "Expert review before any vendor contact"
@@ -202,33 +202,33 @@
                 "startDate": "2027-03-10",
                 "totalEur": 7154,
                 "perGuestEur": 511,
-                "tradeOff": "Cheapest option, with a quiet garden and creative studios; more urban (Kreuzberg) and less secluded.",
+                "tradeOff": "Cheapest option with a quiet garden and creative studios; more urban (Kreuzberg) than a villa retreat.",
                 "policyNotes": [
                   "Expert review before any vendor contact"
                 ]
               },
               {
-                "venueId": "brl-lindenufer",
-                "quoteId": "Q-4382BFC3",
+                "venueId": "bb-seeblick",
+                "quoteId": "Q-CE53F610",
                 "quoteStatus": "quoted",
                 "startDate": "2027-03-10",
-                "totalEur": 8400,
-                "perGuestEur": 600,
-                "tradeOff": "Lakeside with sauna and fireplace, the most atmospheric; priciest, and the upper floors are stairs-only.",
+                "totalEur": 7784,
+                "perGuestEur": 556,
+                "tradeOff": "Lakeside Brandenburg setting feels furthest from the city; 75 min by car and a higher travel cost.",
                 "policyNotes": [
                   "Expert review before any vendor contact"
                 ]
               }
             ],
             "rfp": {
-              "subject": "Request for proposal: team retreat, 14 guests, 2 nights from 2027-03-10",
-              "body": "Hello,\n\nDemo Co. is planning a team retreat and would like a proposal.\n\nDates: arrival 2027-03-10, 2 nights (alternative arrival 2027-03-17).\nGuests: 14.\nRoom nights: 28 (14 single-occupancy rooms for 2 nights).\nMeeting space: 1 meeting room for the full group with lunch and coffee on both days. No breakout rooms needed.\nDietary needs: none reported. Please confirm you can offer vegetarian, vegan and gluten-free options.\nAccessibility: no wheelchair users in the group.\nBudget: up to EUR 9,000 in total.\n\nPlease send availability, a full price breakdown and your terms by 2026-10-25.\n\nThank you."
+              "subject": "Request for proposal: team retreat 10–12 March 2027, 14 guests",
+              "body": "Hello,\n\nWe are planning a quiet team retreat and would like a proposal for:\n- Arrival 2027-03-10, departure 2027-03-12 (2 nights). Alternative arrival: 2027-03-17.\n- 14 guests, 14 single rooms (28 room nights).\n- One meeting room for the full group on both days, with lunch and coffee. No breakout rooms are required.\n- Dietary needs: none reported. Please confirm vegetarian, vegan and gluten-free options.\n- Accessibility: no wheelchair users.\n- Budget: all-in total under EUR 9,000.\n\nPlease include your total price, a per-guest price, and the cancellation terms. Please reply by 2026-10-30.\n\nThank you,\nDemo Co."
             }
           }
         }
       ],
-      "inputTokens": 10835,
-      "outputTokens": 25
+      "inputTokens": 10784,
+      "outputTokens": 24
     }
   ],
   "answer": {
@@ -244,7 +244,7 @@
       "breakoutRooms": 0,
       "dietary": []
     },
-    "summary": "Three quiet Berlin-area venues with on-site rooms are open from 2027-03-10 and all fit the EUR 9,000 budget. Villa Kastanie is a preferred vendor and the best fit for \"quiet and inspiring\". Quotes were priced without breakout rooms, and no latest date was given, so I searched 10–17 March.",
+    "summary": "Three quiet, policy-compliant venues are open for arrival on 2027-03-10, and all quote under the EUR 9,000 budget. Villa Kastanie is a preferred vendor and fits the \"quiet and inspiring\" brief best. You gave no end of the date window, so I checked 10–17 March, and no dietary needs or breakout rooms were given.",
     "offers": [
       {
         "venueId": "brl-kastanie",
@@ -253,7 +253,7 @@
         "startDate": "2027-03-10",
         "totalEur": 7686,
         "perGuestEur": 549,
-        "tradeOff": "Leafy villa with library and garden, 30 min away and a preferred vendor; costs more than Hofgarten.",
+        "tradeOff": "Library, garden and 14 calm rooms in a preferred-vendor villa; costs more than Hofgarten.",
         "policyNotes": [
           "Preferred vendor",
           "Expert review before any vendor contact"
@@ -266,34 +266,34 @@
         "startDate": "2027-03-10",
         "totalEur": 7154,
         "perGuestEur": 511,
-        "tradeOff": "Cheapest option, with a quiet garden and creative studios; more urban (Kreuzberg) and less secluded.",
+        "tradeOff": "Cheapest option with a quiet garden and creative studios; more urban (Kreuzberg) than a villa retreat.",
         "policyNotes": [
           "Expert review before any vendor contact"
         ]
       },
       {
-        "venueId": "brl-lindenufer",
-        "quoteId": "Q-4382BFC3",
+        "venueId": "bb-seeblick",
+        "quoteId": "Q-CE53F610",
         "quoteStatus": "quoted",
         "startDate": "2027-03-10",
-        "totalEur": 8400,
-        "perGuestEur": 600,
-        "tradeOff": "Lakeside with sauna and fireplace, the most atmospheric; priciest, and the upper floors are stairs-only.",
+        "totalEur": 7784,
+        "perGuestEur": 556,
+        "tradeOff": "Lakeside Brandenburg setting feels furthest from the city; 75 min by car and a higher travel cost.",
         "policyNotes": [
           "Expert review before any vendor contact"
         ]
       }
     ],
     "rfp": {
-      "subject": "Request for proposal: team retreat, 14 guests, 2 nights from 2027-03-10",
-      "body": "Hello,\n\nDemo Co. is planning a team retreat and would like a proposal.\n\nDates: arrival 2027-03-10, 2 nights (alternative arrival 2027-03-17).\nGuests: 14.\nRoom nights: 28 (14 single-occupancy rooms for 2 nights).\nMeeting space: 1 meeting room for the full group with lunch and coffee on both days. No breakout rooms needed.\nDietary needs: none reported. Please confirm you can offer vegetarian, vegan and gluten-free options.\nAccessibility: no wheelchair users in the group.\nBudget: up to EUR 9,000 in total.\n\nPlease send availability, a full price breakdown and your terms by 2026-10-25.\n\nThank you."
+      "subject": "Request for proposal: team retreat 10–12 March 2027, 14 guests",
+      "body": "Hello,\n\nWe are planning a quiet team retreat and would like a proposal for:\n- Arrival 2027-03-10, departure 2027-03-12 (2 nights). Alternative arrival: 2027-03-17.\n- 14 guests, 14 single rooms (28 room nights).\n- One meeting room for the full group on both days, with lunch and coffee. No breakout rooms are required.\n- Dietary needs: none reported. Please confirm vegetarian, vegan and gluten-free options.\n- Accessibility: no wheelchair users.\n- Budget: all-in total under EUR 9,000.\n\nPlease include your total price, a per-guest price, and the cancellation terms. Please reply by 2026-10-30.\n\nThank you,\nDemo Co."
     }
   },
   "metrics": {
     "numTurns": 15,
-    "inputTokens": 41148,
-    "outputTokens": 3297,
-    "costUsd": 0.062285,
-    "durationMs": 21231
+    "inputTokens": 40930,
+    "outputTokens": 3246,
+    "costUsd": 0.0615543,
+    "durationMs": 21250
   }
 }

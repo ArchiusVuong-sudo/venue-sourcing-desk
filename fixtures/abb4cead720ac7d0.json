@@ -3,10 +3,10 @@
   "brief": "Two-day workshop in Leipzig for 30 people, 1 night, arriving 2027-02-16. Keep it as cheap as possible, budget EUR 10,000.",
   "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":false,\"shortDays\":3}",
   "model": "claude-sonnet-5-5",
-  "recordedAt": "2026-10-11T03:09:18.790Z",
+  "recordedAt": "2026-10-11T03:30:55.473Z",
   "turns": [
     {
-      "ms": 2157,
+      "ms": 2468,
       "text": "",
       "toolCalls": [
         {
@@ -21,11 +21,11 @@
           }
         }
       ],
-      "inputTokens": 4696,
+      "inputTokens": 4694,
       "outputTokens": 8
     },
     {
-      "ms": 1558,
+      "ms": 1581,
       "text": "",
       "toolCalls": [
         {
@@ -56,11 +56,11 @@
           }
         }
       ],
-      "inputTokens": 5582,
+      "inputTokens": 5580,
       "outputTokens": 24
     },
     {
-      "ms": 1574,
+      "ms": 1608,
       "text": "",
       "toolCalls": [
         {
@@ -94,11 +94,11 @@
           }
         }
       ],
-      "inputTokens": 6274,
+      "inputTokens": 6272,
       "outputTokens": 24
     },
     {
-      "ms": 1692,
+      "ms": 1710,
       "text": "",
       "toolCalls": [
         {
@@ -132,11 +132,11 @@
           }
         }
       ],
-      "inputTokens": 7717,
+      "inputTokens": 7715,
       "outputTokens": 24
     },
     {
-      "ms": 1427,
+      "ms": 6079,
       "text": "",
       "toolCalls": [
         {
@@ -154,7 +154,7 @@
               "breakoutRooms": 0,
               "dietary": []
             },
-            "summary": "Two policy-compliant Leipzig venues are open on 2027-02-16 and both come in under the EUR 10,000 budget. The cheapest in town, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Druckerei Forum is the cheapest of the remaining options.",
+            "summary": "Two Leipzig seminar hotels are available on 2027-02-16 and within the EUR 10,000 budget. The cheapest town option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Both offers are reachable from Berlin by a 75-minute train ride.",
             "offers": [
               {
                 "venueId": "lej-druckerei",
@@ -163,7 +163,7 @@
                 "startDate": "2027-02-16",
                 "totalEur": 9240,
                 "perGuestEur": 308,
-                "tradeOff": "Cheapest compliant option and has 4 workshop rooms, but it is EUR 420 more than the cheapest-in-town venue would have been and leaves only about EUR 760 of budget headroom.",
+                "tradeOff": "Cheapest compliant option, with four workshop rooms and a maker space; gives up the preferred-vendor status of Auwald.",
                 "policyNotes": [
                   "Compliant",
                   "Expert review before any vendor contact"
@@ -176,7 +176,7 @@
                 "startDate": "2027-02-16",
                 "totalEur": 9660,
                 "perGuestEur": 322,
-                "tradeOff": "Preferred vendor with a calm setting and garden, but EUR 420 more than Druckerei Forum and close to the budget cap.",
+                "tradeOff": "Preferred vendor, calm and well run with a garden; EUR 420 more than Druckerei Forum and a quieter setting.",
                 "policyNotes": [
                   "Compliant",
                   "Preferred vendor",
@@ -186,13 +186,13 @@
             ],
             "rfp": {
               "subject": "Request for proposal: 2-day workshop, 16-17 Feb 2027, 30 guests",
-              "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nArrival: 2027-02-16, departure 2027-02-17 (1 night)\nGuests: 30\nRoom nights: 30 single-occupancy rooms for 1 night\nMeeting space: one main workshop room for both days, with lunch and coffee for 30 guests on each day. No breakout rooms needed.\nDietary needs: none reported yet\nAccessibility: no wheelchair users\nBudget: all-in cost for the stay under EUR 10,000 (including group travel from Berlin). Please quote your best price.\n\nPlease reply by 2026-10-25 with availability, a full price breakdown and your terms.\n\nThank you."
+              "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night, departure 2027-02-17.\nGuests: 30.\nRoom nights: 30 single-occupancy rooms for 1 night.\nMeeting space: 1 main meeting room for both days. No breakout rooms needed.\nCatering: lunch and coffee on both days. Dietary needs: none reported.\nAccessibility: no wheelchair users.\nBudget: all-in total under EUR 10,000, so please quote your best rate.\n\nPlease reply with availability and a total price by 2026-10-25.\n\nThank you,\nDemo Co."
             }
           }
         }
       ],
-      "inputTokens": 8617,
-      "outputTokens": 3
+      "inputTokens": 8615,
+      "outputTokens": 25
     }
   ],
   "answer": {
@@ -208,7 +208,7 @@
       "breakoutRooms": 0,
       "dietary": []
     },
-    "summary": "Two policy-compliant Leipzig venues are open on 2027-02-16 and both come in under the EUR 10,000 budget. The cheapest in town, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Druckerei Forum is the cheapest of the remaining options.",
+    "summary": "Two Leipzig seminar hotels are available on 2027-02-16 and within the EUR 10,000 budget. The cheapest town option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Both offers are reachable from Berlin by a 75-minute train ride.",
     "offers": [
       {
         "venueId": "lej-druckerei",
@@ -217,7 +217,7 @@
         "startDate": "2027-02-16",
         "totalEur": 9240,
         "perGuestEur": 308,
-        "tradeOff": "Cheapest compliant option and has 4 workshop rooms, but it is EUR 420 more than the cheapest-in-town venue would have been and leaves only about EUR 760 of budget headroom.",
+        "tradeOff": "Cheapest compliant option, with four workshop rooms and a maker space; gives up the preferred-vendor status of Auwald.",
         "policyNotes": [
           "Compliant",
           "Expert review before any vendor contact"
@@ -230,7 +230,7 @@
         "startDate": "2027-02-16",
         "totalEur": 9660,
         "perGuestEur": 322,
-        "tradeOff": "Preferred vendor with a calm setting and garden, but EUR 420 more than Druckerei Forum and close to the budget cap.",
+        "tradeOff": "Preferred vendor, calm and well run with a garden; EUR 420 more than Druckerei Forum and a quieter setting.",
         "policyNotes": [
           "Compliant",
           "Preferred vendor",
@@ -240,14 +240,14 @@
     ],
     "rfp": {
       "subject": "Request for proposal: 2-day workshop, 16-17 Feb 2027, 30 guests",
-      "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nArrival: 2027-02-16, departure 2027-02-17 (1 night)\nGuests: 30\nRoom nights: 30 single-occupancy rooms for 1 night\nMeeting space: one main workshop room for both days, with lunch and coffee for 30 guests on each day. No breakout rooms needed.\nDietary needs: none reported yet\nAccessibility: no wheelchair users\nBudget: all-in cost for the stay under EUR 10,000 (including group travel from Berlin). Please quote your best price.\n\nPlease reply by 2026-10-25 with availability, a full price breakdown and your terms.\n\nThank you."
+      "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night, departure 2027-02-17.\nGuests: 30.\nRoom nights: 30 single-occupancy rooms for 1 night.\nMeeting space: 1 main meeting room for both days. No breakout rooms needed.\nCatering: lunch and coffee on both days. Dietary needs: none reported.\nAccessibility: no wheelchair users.\nBudget: all-in total under EUR 10,000, so please quote your best rate.\n\nPlease reply with availability and a total price by 2026-10-25.\n\nThank you,\nDemo Co."
     }
   },
   "metrics": {
     "numTurns": 12,
-    "inputTokens": 34119,
-    "outputTokens": 2845,
-    "costUsd": 0.0476308,
-    "durationMs": 17727
+    "inputTokens": 34109,
+    "outputTokens": 2809,
+    "costUsd": 0.04578259999999999,
+    "durationMs": 17581
   }
 }

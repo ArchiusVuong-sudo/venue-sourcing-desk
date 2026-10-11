@@ -3,16 +3,16 @@
   "brief": "Two-day workshop in Leipzig for 30 people, 1 night, arriving 2027-02-16. Keep it as cheap as possible, budget EUR 10,000.",
   "policyFingerprint": "{\"signoff\":20000,\"cap\":1200,\"preferred\":[\"bb-waldhaus\",\"brl-kastanie\",\"lej-auwald\",\"pmi-olivera\"],\"blocked\":[\"lej-kesselhalle\"],\"noFlights\":true,\"shortDays\":3}",
   "model": "claude-sonnet-5-5",
-  "recordedAt": "2026-10-11T03:10:09.252Z",
+  "recordedAt": "2026-10-11T03:31:48.670Z",
   "turns": [
     {
-      "ms": 2396,
+      "ms": 2440,
       "text": "",
       "toolCalls": [
         {
           "name": "search_venues",
           "input": {
-            "query": "workshop meeting rooms affordable",
+            "query": "workshop venue cheap",
             "minCapacity": 30,
             "minBedrooms": 30,
             "regions": [
@@ -22,10 +22,10 @@
         }
       ],
       "inputTokens": 4695,
-      "outputTokens": 8
+      "outputTokens": 5
     },
     {
-      "ms": 1604,
+      "ms": 1649,
       "text": "",
       "toolCalls": [
         {
@@ -56,11 +56,11 @@
           }
         }
       ],
-      "inputTokens": 5593,
-      "outputTokens": 24
+      "inputTokens": 5576,
+      "outputTokens": 26
     },
     {
-      "ms": 1589,
+      "ms": 1594,
       "text": "",
       "toolCalls": [
         {
@@ -94,11 +94,11 @@
           }
         }
       ],
-      "inputTokens": 6285,
+      "inputTokens": 6268,
       "outputTokens": 24
     },
     {
-      "ms": 1738,
+      "ms": 1709,
       "text": "",
       "toolCalls": [
         {
@@ -132,11 +132,11 @@
           }
         }
       ],
-      "inputTokens": 7728,
-      "outputTokens": 26
+      "inputTokens": 7711,
+      "outputTokens": 24
     },
     {
-      "ms": 1536,
+      "ms": 1400,
       "text": "",
       "toolCalls": [
         {
@@ -154,7 +154,7 @@
               "breakoutRooms": 0,
               "dietary": []
             },
-            "summary": "Two Leipzig seminar hotels are open on 2027-02-16 and comply with policy, and both are under the EUR 10,000 budget. The cheapest Leipzig option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Only three Leipzig venues matched, so the shortlist has two offers.",
+            "summary": "Two Leipzig venues are open on 2027-02-16 and within the EUR 10,000 budget. The cheapest option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Druckerei Forum is the cheapest compliant option.",
             "offers": [
               {
                 "venueId": "lej-druckerei",
@@ -163,7 +163,7 @@
                 "startDate": "2027-02-16",
                 "totalEur": 9240,
                 "perGuestEur": 308,
-                "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; it costs EUR 420 less than Auwald but is not a preferred vendor.",
+                "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; gives up the preferred-vendor status of Auwald.",
                 "policyNotes": [
                   "Compliant",
                   "Expert review before any vendor contact"
@@ -176,7 +176,7 @@
                 "startDate": "2027-02-16",
                 "totalEur": 9660,
                 "perGuestEur": 322,
-                "tradeOff": "Preferred vendor in a calm floodplain setting; it costs EUR 420 more than Druckerei Forum and has 3 breakout rooms instead of 4.",
+                "tradeOff": "Preferred vendor, calm and well run, but EUR 420 more than Druckerei Forum.",
                 "policyNotes": [
                   "Compliant",
                   "Preferred vendor",
@@ -185,13 +185,13 @@
               }
             ],
             "rfp": {
-              "subject": "Request for proposal: 2-day workshop, Leipzig, arriving 2027-02-16",
-              "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single rooms, 1 night\nMeeting space: one main meeting room for 30 people on both days. No separate breakout rooms are needed.\nCatering: lunch and coffee for 30 on both days (60 day delegate packages)\nDietary needs: none reported\nAccessibility: no wheelchair users; please confirm step-free access anyway.\nBudget: our total budget is EUR 10,000, so please quote your best all-in price.\n\nPlease reply by 2026-11-15 with availability, a price breakdown and your terms.\n\nThank you,\nDemo Co. Events"
+              "subject": "Request for proposal: 2-day workshop, arrival 2027-02-16, 30 guests",
+              "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nArrival: 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single-occupancy bedrooms for 1 night\nMeeting space: one main meeting room for 2 days, with lunch and coffee. We have not asked for breakout rooms (0).\nDietary needs: none reported\nAccessibility: no wheelchair users\nBudget: all-in total under EUR 10,000\n\nPlease send your price per person and total, including any extra fees, by 2026-11-06.\n\nThank you,\nDemo Co."
             }
           }
         }
       ],
-      "inputTokens": 8628,
+      "inputTokens": 8611,
       "outputTokens": 5
     }
   ],
@@ -208,7 +208,7 @@
       "breakoutRooms": 0,
       "dietary": []
     },
-    "summary": "Two Leipzig seminar hotels are open on 2027-02-16 and comply with policy, and both are under the EUR 10,000 budget. The cheapest Leipzig option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Only three Leipzig venues matched, so the shortlist has two offers.",
+    "summary": "Two Leipzig venues are open on 2027-02-16 and within the EUR 10,000 budget. The cheapest option, Kesselhalle Plagwitz (EUR 7,770), is on the blocked vendor list, so I left it out. Druckerei Forum is the cheapest compliant option.",
     "offers": [
       {
         "venueId": "lej-druckerei",
@@ -217,7 +217,7 @@
         "startDate": "2027-02-16",
         "totalEur": 9240,
         "perGuestEur": 308,
-        "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; it costs EUR 420 less than Auwald but is not a preferred vendor.",
+        "tradeOff": "Cheapest compliant option, with 4 workshop rooms and a maker space; gives up the preferred-vendor status of Auwald.",
         "policyNotes": [
           "Compliant",
           "Expert review before any vendor contact"
@@ -230,7 +230,7 @@
         "startDate": "2027-02-16",
         "totalEur": 9660,
         "perGuestEur": 322,
-        "tradeOff": "Preferred vendor in a calm floodplain setting; it costs EUR 420 more than Druckerei Forum and has 3 breakout rooms instead of 4.",
+        "tradeOff": "Preferred vendor, calm and well run, but EUR 420 more than Druckerei Forum.",
         "policyNotes": [
           "Compliant",
           "Preferred vendor",
@@ -239,15 +239,15 @@
       }
     ],
     "rfp": {
-      "subject": "Request for proposal: 2-day workshop, Leipzig, arriving 2027-02-16",
-      "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nDates: arrival 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single rooms, 1 night\nMeeting space: one main meeting room for 30 people on both days. No separate breakout rooms are needed.\nCatering: lunch and coffee for 30 on both days (60 day delegate packages)\nDietary needs: none reported\nAccessibility: no wheelchair users; please confirm step-free access anyway.\nBudget: our total budget is EUR 10,000, so please quote your best all-in price.\n\nPlease reply by 2026-11-15 with availability, a price breakdown and your terms.\n\nThank you,\nDemo Co. Events"
+      "subject": "Request for proposal: 2-day workshop, arrival 2027-02-16, 30 guests",
+      "body": "Hello,\n\nWe are planning a two-day workshop and would like a proposal.\n\nArrival: 2027-02-16, 1 night (departure 2027-02-17)\nGuests: 30\nRoom nights: 30 single-occupancy bedrooms for 1 night\nMeeting space: one main meeting room for 2 days, with lunch and coffee. We have not asked for breakout rooms (0).\nDietary needs: none reported\nAccessibility: no wheelchair users\nBudget: all-in total under EUR 10,000\n\nPlease send your price per person and total, including any extra fees, by 2026-11-06.\n\nThank you,\nDemo Co."
     }
   },
   "metrics": {
     "numTurns": 12,
-    "inputTokens": 34162,
-    "outputTokens": 2696,
-    "costUsd": 0.046960100000000005,
-    "durationMs": 18105
+    "inputTokens": 34094,
+    "outputTokens": 2719,
+    "costUsd": 0.0456255,
+    "durationMs": 17631
   }
 }
